@@ -20,7 +20,7 @@
         function getUsuarios(){
                 isLoading = true;
 
-            fetch('http://localhost/projeto_simples/backend/gerenciamento_usuarios/listar_usuarios.php',
+            fetch('http://localhost/projeto_simples/back_end/gerenciamento_usuarios/listar_usuarios.php',
                 {
                     method: 'GET',
                     headers: {
@@ -39,14 +39,14 @@
                     // montando o visual da lista
                     let row = document.createElement('div');
                     row.classList.add('row');
-                    row.setAttribute('id', usu.cadastro_id);
-                    row.setAttribute('onclick', 'alert("Usuario ' + usu.cadastro_nome + ' selecionado de id ' + usu.cadastro_id + '")');
+                    row.setAttribute('id', usu.(cadastro_id));
+                    row.setAttribute('onclick', 'alert("Usuario ' + usu.(cadastro_nome) + ' selecionado de id ' + usu.(cadastro_id) + '")');
 
                     let col = document.createElement('div');
                     col.classList.add('col-12');
 
                     let p = document.createElement('p');
-                    p.innerText = usu.cadastro_id + ' - ' + usu.cadastro_nome;
+                    p.innerText = usu.(cadastro_id) + ' - ' + usu.(cadastro_nome);
 
                     col.appendChild(p);
                     row.appendChild(col);
