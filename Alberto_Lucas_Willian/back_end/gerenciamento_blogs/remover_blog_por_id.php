@@ -12,8 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
     // Agora você pode acessar os dados usando $requestData
     $codigo = $requestData->cadastro_id;
 
-	// cadastro_id é o nome da coluna que está sendo enviado pelo cliente
-	$sql = "DELETE FROM cadastro_usuario WHERE cadastro_id='$codigo'";
+	// "cadastro_id" é o nome da coluna que está sendo enviado pelo cliente
+
+    // Deleta o blog selecionado pelo ID
+	$sql = "DELETE FROM blog_simples WHERE blog_id='$codigo'";
 
     if ($connection->query($sql) === true) {
         $response = [

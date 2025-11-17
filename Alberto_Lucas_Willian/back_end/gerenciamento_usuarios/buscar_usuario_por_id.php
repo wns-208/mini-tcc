@@ -1,71 +1,38 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
+<?php
+	include 'cors.php';
+	include 'conexao.php';
 
-    <div class="container" id="lista"></div>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtém o corpo da solicitação POST
+    $data = file_get_contents("php://input");
 
-    <script>
-        //selecionando a div onde a lista sera exibida
-        let lista = document.getElementById('lista');
-        
-        let usuario = { };
+    // Decodifica o JSON para um objeto PHP
+    $requestData = json_decode($data);
+    
+    // Agora você pode acessar os dados usando $requestData
+    $codigo = $requestData->cadastro_id;
 
+    // Realiza a busca do usuario em acordo com o ID do usuario
+	$sql = "SELECT * FROM cadastro_usuario WHERE cadastro_id = '$codigo'";
 
-        function getUsuarios(){
-                isLoading = true;
+    $result = $connection->query($sql);
 
-            fetch('http://localhost/projeto_simples/backend/gerenciamento_usuarios/listar_usuarios.php',
-                {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                }
-            )
-            .then(response => response.json())
-            .then(response => {
-                
-                /*
-                Tire o parentese e coloque o nome das variaveis de acordo com o banco de dados
-                */
-
-                response.usuarios.forEach(usu => {
-                    // montando o visual da lista
-                    let row = document.createElement('div');
-                    row.classList.add('row');
-                    row.setAttribute('id', usu.cadastro_id);
-                    row.setAttribute('onclick', 'alert("Usuario ' + usu.cadastro_nome + ' selecionado de id ' + usu.cadastro_id + '")');
-
-                    let col = document.createElement('div');
-                    col.classList.add('col-12');
-
-                    let p = document.createElement('p');
-                    p.innerText = usu.cadastro_id + ' - ' + usu.cadastro_nome;
-
-                    col.appendChild(p);
-                    row.appendChild(col);
-                    lista.appendChild(row);
-                });
-
-            })
-            .catch(erro => {
-                console.log(erro);
-            })
-            .finally(()=>{
-                isLoading = false;
-            })
+    if ($result->num_rows > 0) {
+        $usuarios = [];
+        while ($row = $result->fetch_assoc()) {
+            array_push($usuarios, $row);
         }
 
-        getUsuarios(); // Buscar Dados
-    </script>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    
-</body>
-</html>
+        $response = [
+            'usuarios' => $usuarios
+        ];
+
+    } else {
+        $response = [
+            'usuarios' => 'O ID inserido não existe.'
+        ];
+    }
+
+    echo json_encode($response);
+	} // Fim If
+?>

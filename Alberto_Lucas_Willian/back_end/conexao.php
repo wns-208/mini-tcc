@@ -1,8 +1,8 @@
 <?php
-	$host = "localhost"; // endereço do servidor
-	$usuario = "root"; // usuário do MySQL
-	$senha = ""; // senha do MySQL
-	$database = "blog"; // nome do banco de dados
+	$host = "localhost"; // Endereço do servidor
+	$usuario = "root"; // Usuário do MySQL
+	$senha = ""; // Senha do MySQL
+	$database = "blog"; // Nome do banco de dados
 
 	// Cria a conexão
 	$connection = new mysqli($host, $usuario, $senha, $database);

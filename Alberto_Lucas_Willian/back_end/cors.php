@@ -1,4 +1,7 @@
 <?php
+
+// Permite a conexão com uma nossa API
+
 //	declare(strict_types=1);
 
   // Define os cabeçalhos para permitir acesso de qualquer origem (*)
@@ -10,3 +13,4 @@
   header("Access-Control-Allow-Origin: *");
   
 ?>
+

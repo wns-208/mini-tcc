@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Agora você pode acessar os dados usando $requestData
     $titulo = $requestData->blog_titulo;
 
+    // Realiza a busca do blog em acordo com o nome do titulo
 	$sql = "SELECT * FROM blog_simples WHERE blog_titulo = '$titulo'";
 
     $result = $connection->query($sql);

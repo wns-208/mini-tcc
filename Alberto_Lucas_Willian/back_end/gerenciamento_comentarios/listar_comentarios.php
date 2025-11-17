@@ -2,6 +2,7 @@
 	include 'cors.php';
 	include 'conexao.php';
 
+    // Realiza a busca completa de todos os comentarios registrados
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 	$sql = "SELECT * FROM cometario_blog";

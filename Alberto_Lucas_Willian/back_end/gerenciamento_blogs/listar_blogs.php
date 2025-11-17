@@ -2,6 +2,7 @@
 	include 'cors.php';
 	include 'conexao.php';
 
+    // Realiza a busca completa de todos os blogs registrados
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 	$sql = "SELECT * FROM blog_simples";
