@@ -1,2 +1,0 @@
-# mini-tcc
-oloco
