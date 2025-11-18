@@ -1,0 +1,14 @@
+Para criar imagens e exibi-las
+
+EXTRA
+Crie uma pasta para as imagens
+
+FRONT END
+Crie um "input" tipo "file"
+^ Isso vai guardar uma copia desse arquivo em uma pasta "temp"
+Depois da imagem ser guardada no banco de dados, exiba o lugar do arquivo da pasta final via "<img>"
+
+BACK END
+Gere um nome aleatorio para a copia do arquivo;
+Retorne esse arquivo e guarde ele na pasta. Utilize move_uploaded_file($temp_folder, $final_folder);
+Guardar o lugar do arquivo na pasta final no banco de dados;
