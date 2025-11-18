@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $requestData = json_decode($data);
     
     // Agora você pode acessar os dados usando $requestData
-    $codigo = $requestData->cadastro_id;
+    $id = $requestData->usuario_id;
 
     // Realiza a busca do usuario em acordo com o ID do usuario
-	$sql = "SELECT * FROM cadastro_usuario WHERE cadastro_id = '$codigo'";
+	$sql = "SELECT * FROM usuario WHERE usuario_id = '$id'";
 
     $result = $connection->query($sql);
 

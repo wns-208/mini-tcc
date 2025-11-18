@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2025 at 06:56 PM
+-- Generation Time: Nov 18, 2025 at 07:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -26,45 +26,44 @@ USE `blog`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_simples`
+-- Table structure for table `comentario`
 --
 
-CREATE TABLE `blog_simples` (
-  `blog_id` int(11) NOT NULL,
-  `blog_id_usuario` int(11) NOT NULL,
-  `blog_nome_usuario` varchar(255) NOT NULL,
-  `blog_titulo` varchar(255) NOT NULL,
-  `blog_conteudo` varchar(255) NOT NULL,
-  `blog_imagem` varchar(255) NOT NULL,
-  `blog_data_criacao` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cadastro_usuario`
---
-
-CREATE TABLE `cadastro_usuario` (
-  `cadastro_id` int(11) NOT NULL,
-  `cadastro_nome` varchar(255) NOT NULL,
-  `cadastro_senha` varchar(255) NOT NULL,
-  `cadastro_tipo` varchar(255) NOT NULL,
-  `cadastro_tel` bigint(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `comentario_blog`
---
-
-CREATE TABLE `comentario_blog` (
+CREATE TABLE `comentario` (
   `comentario_id` int(11) NOT NULL,
-  `comentario_id_blog` int(11) NOT NULL,
-  `comentario_nome_usuario` int(11) NOT NULL,
+  `comentario_id_postagem` int(11) NOT NULL,
+  `comentario_id_usuario` int(11) NOT NULL,
   `comentario_conteudo` varchar(255) NOT NULL,
   `comentario_data_criacao` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `postagem`
+--
+
+CREATE TABLE `postagem` (
+  `postagem_id` int(11) NOT NULL,
+  `postagem_id_usuario` int(11) NOT NULL,
+  `postagem_titulo` varchar(255) NOT NULL,
+  `postagem_conteudo` varchar(255) NOT NULL,
+  `postagem_imagem` varchar(255) NOT NULL,
+  `postagem_data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `postagem_categoria` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `usuario_id` int(11) NOT NULL,
+  `usuario_nome` varchar(255) NOT NULL,
+  `usuario_senha` varchar(255) NOT NULL,
+  `usuario_tipo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -72,45 +71,64 @@ CREATE TABLE `comentario_blog` (
 --
 
 --
--- Indexes for table `blog_simples`
+-- Indexes for table `comentario`
 --
-ALTER TABLE `blog_simples`
-  ADD PRIMARY KEY (`blog_id`);
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`comentario_id`),
+  ADD KEY `fk_comentario_postagem` (`comentario_id_postagem`),
+  ADD KEY `fk_comentario_usuario` (`comentario_id_usuario`);
 
 --
--- Indexes for table `cadastro_usuario`
+-- Indexes for table `postagem`
 --
-ALTER TABLE `cadastro_usuario`
-  ADD PRIMARY KEY (`cadastro_id`),
-  ADD UNIQUE KEY `cadastro_tel` (`cadastro_tel`);
+ALTER TABLE `postagem`
+  ADD PRIMARY KEY (`postagem_id`),
+  ADD KEY `fk_postagem_usuario` (`postagem_id_usuario`);
 
 --
--- Indexes for table `comentario_blog`
+-- Indexes for table `usuario`
 --
-ALTER TABLE `comentario_blog`
-  ADD PRIMARY KEY (`comentario_id`);
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`usuario_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `blog_simples`
+-- AUTO_INCREMENT for table `comentario`
 --
-ALTER TABLE `blog_simples`
-  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `cadastro_usuario`
---
-ALTER TABLE `cadastro_usuario`
-  MODIFY `cadastro_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `comentario_blog`
---
-ALTER TABLE `comentario_blog`
+ALTER TABLE `comentario`
   MODIFY `comentario_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `postagem`
+--
+ALTER TABLE `postagem`
+  MODIFY `postagem_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `fk_comentario_postagem` FOREIGN KEY (`comentario_id_postagem`) REFERENCES `postagem` (`postagem_id`),
+  ADD CONSTRAINT `fk_comentario_usuario` FOREIGN KEY (`comentario_id_usuario`) REFERENCES `usuario` (`usuario_id`);
+
+--
+-- Constraints for table `postagem`
+--
+ALTER TABLE `postagem`
+  ADD CONSTRAINT `fk_postagem_usuario` FOREIGN KEY (`postagem_id_usuario`) REFERENCES `usuario` (`usuario_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

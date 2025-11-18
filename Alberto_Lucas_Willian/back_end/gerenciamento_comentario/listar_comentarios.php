@@ -5,7 +5,7 @@
     // Realiza a busca completa de todos os comentarios registrados
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-	$sql = "SELECT * FROM cometario_blog";
+	$sql = "SELECT * FROM comentario";
 
     $result = $connection->query($sql);
 
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     } else {
         $response = [
-            'comentarios' => 'Nenhum comentario encontrado! Deseja comentar alguma coisa?'
+            'comentarios' => 'Nenhum comentario encontrado nessa postagem! Deseja comentar alguma coisa?'
         ];
     }
 

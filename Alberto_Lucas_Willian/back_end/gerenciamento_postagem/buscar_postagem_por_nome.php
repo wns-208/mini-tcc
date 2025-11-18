@@ -10,21 +10,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $requestData = json_decode($data);
     
     // Agora você pode acessar os dados usando $requestData
-    $titulo = $requestData->blog_titulo;
+    $titulo = $requestData->postagem_titulo;
 
-    // Realiza a busca do blog em acordo com o nome do titulo
-	$sql = "SELECT * FROM blog_simples WHERE blog_titulo = '$titulo'";
+    // Realiza a busca da postagem em acordo com "postagem_titulo"
+	$sql = "SELECT * FROM postagem WHERE postagem_titulo = '$titulo'";
 
     $result = $connection->query($sql);
 
     if ($result->num_rows > 0) {
-        $blogs = [];
+        $postagens = [];
         while ($row = $result->fetch_assoc()) {
-            array_push($blogs, $row);
+            array_push($postagens, $row);
         }
 
         $response = [
-            'blogs' => $blogs
+            'postagens' => $postagens
         ];
 
     } else {

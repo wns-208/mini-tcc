@@ -5,7 +5,7 @@
     // Realiza a busca completa de todos os usuarios registrados
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-	$sql = "SELECT * FROM cadastro_usuario";
+	$sql = "SELECT * FROM usuario";
 
     $result = $connection->query($sql);
 

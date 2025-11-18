@@ -10,16 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
     $requestData = json_decode($data);
 
     // Agora você pode acessar os dados usando $requestData
-    $codigo = $requestData->cadastro_id;
+    $id = $requestData->cadastro_id;
 
-	// "cadastro_id" é o nome da coluna que está sendo enviado pelo cliente
+	// "postagem_id" é o nome da coluna que está sendo enviado pelo cliente
 
-    // Deleta o usuario selecionado pelo ID
-	$sql = "DELETE FROM cadastro_usuario WHERE cadastro_id='$codigo'";
+    // Deleta a postagem selecionado pelo ID
+	$sql = "DELETE FROM postagem WHERE postagem_id='$id'";
 
     if ($connection->query($sql) === true) {
         $response = [
-            'mensagem' => 'Registro apagado com sucesso!'
+            'mensagem' => 'Postagem apagada com sucesso!'
         ];
     } else {
         $response = [

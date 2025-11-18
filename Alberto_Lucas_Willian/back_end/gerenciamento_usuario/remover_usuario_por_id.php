@@ -10,16 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
     $requestData = json_decode($data);
 
     // Agora você pode acessar os dados usando $requestData
-    $codigo = $requestData->cadastro_id;
+    $id = $requestData->usuario_id;
 
-	// "cadastro_id" é o nome da coluna que está sendo enviado pelo cliente
+	// "usuario_id" é o nome da coluna que está sendo enviado pelo cliente
 
-    // Deleta o blog selecionado pelo ID
-	$sql = "DELETE FROM blog_simples WHERE blog_id='$codigo'";
+    // Deleta o usuario selecionado pelo ID
+	$sql = "DELETE FROM usuario WHERE usuario_id='$id'";
 
     if ($connection->query($sql) === true) {
         $response = [
-            'mensagem' => 'Blog apagado com sucesso!'
+            'mensagem' => 'Registro apagado com sucesso!'
         ];
     } else {
         $response = [
