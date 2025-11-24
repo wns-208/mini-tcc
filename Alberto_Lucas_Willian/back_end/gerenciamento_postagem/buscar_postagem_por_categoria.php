@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $requestData = json_decode($data);
     
     // Agora você pode acessar os dados usando $requestData
-    $titulo = $requestData->postagem_titulo;
+    $categoria = $requestData->postagem_categoria;
 
-    // Realiza a busca da postagem em acordo com "postagem_titulo"
-	$sql = "SELECT * FROM postagem WHERE postagem_titulo = '$titulo'";
+    // Realiza a busca da postagem em acordo com "postagem_categoria"
+	$sql = "SELECT * FROM postagem WHERE postagem_categoria = '$categoria'";
 
     $result = $connection->query($sql);
 

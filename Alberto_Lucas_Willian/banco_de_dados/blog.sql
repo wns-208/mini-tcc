@@ -26,20 +26,6 @@ USE `blog`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comentario`
---
-
-CREATE TABLE `comentario` (
-  `comentario_id` int(11) NOT NULL,
-  `comentario_id_postagem` int(11) NOT NULL,
-  `comentario_id_usuario` int(11) NOT NULL,
-  `comentario_conteudo` varchar(255) NOT NULL,
-  `comentario_data_criacao` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `postagem`
 --
 
@@ -71,14 +57,6 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Indexes for table `comentario`
---
-ALTER TABLE `comentario`
-  ADD PRIMARY KEY (`comentario_id`),
-  ADD KEY `fk_comentario_postagem` (`comentario_id_postagem`),
-  ADD KEY `fk_comentario_usuario` (`comentario_id_usuario`);
-
---
 -- Indexes for table `postagem`
 --
 ALTER TABLE `postagem`
@@ -96,12 +74,6 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT for table `comentario`
---
-ALTER TABLE `comentario`
-  MODIFY `comentario_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `postagem`
 --
 ALTER TABLE `postagem`
@@ -116,13 +88,6 @@ ALTER TABLE `usuario`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `comentario`
---
-ALTER TABLE `comentario`
-  ADD CONSTRAINT `fk_comentario_postagem` FOREIGN KEY (`comentario_id_postagem`) REFERENCES `postagem` (`postagem_id`),
-  ADD CONSTRAINT `fk_comentario_usuario` FOREIGN KEY (`comentario_id_usuario`) REFERENCES `usuario` (`usuario_id`);
 
 --
 -- Constraints for table `postagem`
