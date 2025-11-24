@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Remover usuario por ID</title>
+    <title>Remover postagem por ID</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
 
-    <label for="input_id">Digite o ID do usuario</label>
+    <label for="input_id">Digite o ID da postagem</label>
     <input type="number" name="input_id" id="input_id">
     <button type="submit">Enviar</button>
 
     <script>
         let id_selecionado = document.querySelector("#input_id")
-        let usuario = { usuario_id: `${id_selecionado}` };
+        let postagem = { postagem_id: `${id_selecionado}` };
         let isLoading = false;
 
-        function getUsuarios(){
+        function getPostagens(){
                 isLoading = true;
 
-            fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_usuario/remover_usuario_por_id.php',
+            fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_postagem/remover_postagem_por_id.php',
                     {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(usuario)
+                    body: JSON.stringify(postagem)
                     }
                 )
             .then(response => response.json())
@@ -41,7 +41,7 @@
             })
         }
 
-        getUsuarios(); // Buscar Dados
+        getPostagens(); // Buscar Dados
     </script>
     
     
