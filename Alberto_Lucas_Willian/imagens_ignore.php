@@ -5,7 +5,7 @@
 </form>
 
 <?php
-$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/assets/";
+$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/assests/";
 $arquivo_selecionado = $pasta_final.basename($_FILES["foto"]["name"]);
 $statusOk = true;
 
