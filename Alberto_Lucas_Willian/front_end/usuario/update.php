@@ -1,61 +1,47 @@
-<?php 
-include '../../config/connection.php';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
 
-if($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $id = isset($_GET['id']) ? $_GET['id'] :exit();
+<div class="container mt-4">
+<div claas="card shadow-sm p-4">
+ <h3 class="mb-4">cadastro</h3>   
 
-    if (empty($id)){
-        echo'É necessario informar o código!!!';
-        exit();
-    }
+<form action="cadastro.php" method="POST">
+    <div class="row">
+    <div class="col-md-6 mb-3">
+   <label class="form-label" for="nome">Nome do Usuario</label>
+   <input class="form-control" type="text" name="nome" id="nome">
+   </div>
+   </div>
 
-    $stmt = $pdo->prepare('SELECT * FROM usuario WHERE id = :id');
-    $stmt->bindParam(':id', $id); //insere os id em :id da linha acima
-    $stmt->execute(); //executa a consulta que foi preparada
-    $usuario = $stmt->fetchAll(); //converter os dados em array
-}
+   <div class="row">
+    <div class="col-md-6 mb-3">
+   <label class="form-label" for="email">email</label>
+   <input class="form-control" type="email" name="email" id="email">
+   </div>
+   </div>
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = isset($_POST['id']) ? $_POST['id'] :exit();
-    $username = isset($_POST['username']) ? $_POST['username'] :exit();
-    $password = isset($_POST['password']) ? $_POST['password'] :exit();
+   <!-- <br><br> -->
 
-    if (empty($id)){
-        echo'É necessario informar o código!!!';
-        exit();
-    }
+   <div class="col-md-6 mb-3">
+   <label class="form-label" for="senha">senha</label>
+   <input class="form-control" type="password" name="senha" id="senha">
+    </div>
+    </div>
+   <!-- <br><br> -->
 
-    if (empty($username)){
-        echo'É necessario o nome!!!';
-        exit();
-    }
-
-    if (empty($password)){
-        echo'É necessario a senha!!!';
-        exit();
-    }
-    $stmt = $pdo->prepare('UPDATE usuario SET username=:username, password=:password WHERE id=:id');
-    $stmt->bindParam(':id', $id);
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':password', $password);
-    $stmt->execute();
-    Header("Location: read.php");
-}
-
-   
-?>
-
-<form action="update.php" method="POST">
-    <input type="hidden" name="id" value="<?php echo $usuario[0]["id"]; ?>">
-   <label for="username">Nome do Usuario</label>
-   <input type="text" name="username" id="username" value="<?php echo $usuario[0]["username"]; ?>">
-   <br><br>
-   <label for="password">senha</label>
-   <input type="password" name="password" id="password">
-   <br><br> 
-   <button type="submit">Cadastrar</button>
+   <button class="btn btn-primary w-100; type="submit">Cadastrar</button>
 </form>
+</div>
+</div>
 
-
-
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
