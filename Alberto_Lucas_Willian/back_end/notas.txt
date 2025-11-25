@@ -1,17 +1,6 @@
 O que precisa ser feito BACKEND
 - Cadastro de usuarios
+    - Edição de usuarios
 - Criação de postagens
-- **Arquivos de foto**
-    ^^^^^^^
-    BACKEND
-Gere um nome aleatorio para a copia do arquivo;
-Retorne esse arquivo e guarde ele na pasta. Utilize move_uploaded_file($temp_folder, $final_folder);
-Guardar o lugar do arquivo na pasta final no banco de dados.
-
-    EXTRA
-Crie uma pasta para as imagens
-
-    FRONT END
-Crie um "input" tipo "file";
-^ Isso vai guardar uma copia desse arquivo em uma pasta "temp".
-Depois da imagem ser guardada no banco de dados, exiba o lugar do arquivo da pasta final via "<img>".
+        ^^^^
+Conexão ao banco de dados (INSERT E UPDATE)
