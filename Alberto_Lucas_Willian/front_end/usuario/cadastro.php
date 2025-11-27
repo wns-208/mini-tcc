@@ -7,42 +7,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
 
-<div class="container mt-4">
-<div claas="card shadow-sm p-4">
- <h3 class="mb-4">cadastro</h3>   
 
-<form action="cadastro.php" method="POST">
-    <div class="row">
-    <div class="col-md-6 mb-3">
-   <label class="form-label" for="nome">Nome do Usuario</label>
-   <input class="form-control" type="text" name="nome" id="nome">
-   </div>
-   </div>
 
-   <div class="row">
-    <div class="col-md-6 mb-3">
-   <label class="form-label" for="email">email</label>
-   <input class="form-control" type="email" name="email" id="email">
-   </div>
-   </div>
+<div class="container mt-4 d-flex justify-content-end align-items-center">
+    <div class="formulario">
+        <h3 class="mb-4">cadastro</h3>   
 
-   <!-- <br><br> -->
+        <form action="cadastro.php" method="POST">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label class="form-label" for="nome">Nome do Usuario</label>
+                    <input class="form-control" type="text" name="nome" id="nome" autocomplete="on" required>
+                </div>
+            </div>
 
-   <div class="col-md-6 mb-3">
-   <label class="form-label" for="senha">senha</label>
-   <input class="form-control" type="password" name="senha" id="senha">
-    </div>
-    </div>
-   <!-- <br><br> -->
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" name="email" id="email">
+                </div>
+            </div>
 
-   <button class="btn btn-primary w-100; type="submit">Cadastrar</button>
-</form>
-</div>
+            <div class="col-md-12 mb-3">
+                <label class="form-label" for="senha">Senha</label>
+                <input class="form-control" type="password" name="senha" id="senha">
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
