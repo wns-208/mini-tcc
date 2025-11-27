@@ -7,15 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-
     <div class="container" id="lista"></div>
-
     <script>
         //selecionando a div onde a lista sera exibida
         let lista = document.getElementById('lista');
-        
+    
         let usuario = { };
 
+        const local_arquivo = "./assests/perfil/"
 
         function getUsuarios(){
                 isLoading = true;
@@ -36,15 +35,17 @@
                     let row = document.createElement('div');
                     row.classList.add('row');
                     row.setAttribute('id', usuario.usuario_id);
-                    row.setAttribute('onclick', 'alert("Usuario: ' + usuario.usuario_nome + 'ID: ' + usuario.usuario_id + '")');
+                    row.setAttribute('onclick', 'alert("Nome: ' + usuario.usuario_nome + 'ID: ' + usuario.usuario_id);
 
                     let col = document.createElement('div');
                     col.classList.add('col-12');
 
                     let p = document.createElement('p');
-                    p.innerText = usuario.usuario_id + ' - ' + usuario.usuario_nome;
-
+                    p.innerText = 'ID: ' + usuario.usuario_id + ' Nome: ' + usuario.usuario_nome + ' E-mail: ' + usuario.usuario_email + ' Senha: ' + usuario.usuario_senha + ' Foto: '
+                    let img = document.createElement('img');
+                    img.src = local_arquivo + usuario.usuario_foto_perfil;
                     col.appendChild(p);
+                    col.appendChild(img);
                     row.appendChild(col);
                     lista.appendChild(row);
                 });

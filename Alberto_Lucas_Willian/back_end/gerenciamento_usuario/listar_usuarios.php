@@ -1,6 +1,6 @@
 <?php
-	include 'cors.php';
-	include 'conexao.php';
+	include '../cors.php';
+	include '../conexao.php';
 
     // Realiza a busca completa de todos os usuarios registrados
 if ($_SERVER["REQUEST_METHOD"] == "GET") {

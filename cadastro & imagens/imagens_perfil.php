@@ -1,21 +1,38 @@
-<form action="imagens_postagem.php" method="post" enctype="multipart/form-data"> <!-- Lembre-se de colocar o enctype correto, é precisso para realizar o upload de arquivos -->
-    <label for="foto">Selecione uma foto para representar essa postagem:</label>
+<?php
+include "../Alberto_Lucas_Willian/back_end/conexao.php";
+session_start();
+$id_usuario = $_SESSION["id"];
+?>
+
+<form action="imagens_perfil.php" method="post" enctype="multipart/form-data"> <!-- Lembre-se de colocar o enctype correto, é precisso para realizar o upload de arquivos -->
+    <label for="foto">Selecione uma foto para servir como foto de perfil:</label>
     <input type="file" name="foto" id="foto">
     <button type="submit" name="enviar">Enviar Foto</button>
 </form>
 
 <?php
-$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/assests/postagem/";
+$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/front_end/usuarios/assests/perfil/";
 $arquivo_selecionado = $pasta_final.basename($_FILES["foto"]["name"]);
 $validacao = explode(".", basename($arquivo_selecionado));
-$statusOk = true;
+
 if ($validacao[1] == "jpeg") {
     if (isset($_POST["enviar"]) && $_FILES["foto"]["error"] == UPLOAD_ERR_OK) {
+
         if (move_uploaded_file($_FILES["foto"]["tmp_name"], $arquivo_selecionado)) {
-            echo 'A foto ' . htmlspecialchars(basename($_FILES["foto"]["name"])) . ' foi enviada.';
+            $atualizar_foto_perfil = $connection->prepare("UPDATE usuario SET usuario_foto_perfil = ? WHERE usuario_id = ?");
+            $atualizar_foto_perfil->bind_param("si", basename($arquivo_selecionado), $id_usuario);
+
+            if ($atualizar_foto_perfil->execute()) {
+                echo "Foto de perfil autualizada";
+
+            } else {
+                echo "Erro em atualizar a foto: " . $atualizar_foto_perfil->error;
+            }
+
         } else {
             echo 'Erro em enviar a foto.';
         }
+
     } else {
         echo 'Erro em enviar a foto OU uma foto não foi selecionada.';
     }

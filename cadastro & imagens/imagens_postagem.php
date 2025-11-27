@@ -1,14 +1,13 @@
 <form action="imagens_postagem.php" method="post" enctype="multipart/form-data"> <!-- Lembre-se de colocar o enctype correto, é precisso para realizar o upload de arquivos -->
-    <label for="foto">Selecione uma foto para servir como foto de perfil:</label>
+    <label for="foto">Selecione uma foto para representar essa postagem:</label>
     <input type="file" name="foto" id="foto">
     <button type="submit" name="enviar">Enviar Foto</button>
 </form>
 
 <?php
-$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/assests/perfil/";
+$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/front_end/usuarios/assests/postagem/";
 $arquivo_selecionado = $pasta_final.basename($_FILES["foto"]["name"]);
 $validacao = explode(".", basename($arquivo_selecionado));
-$statusOk = true;
 if ($validacao[1] == "jpeg") {
     if (isset($_POST["enviar"]) && $_FILES["foto"]["error"] == UPLOAD_ERR_OK) {
         if (move_uploaded_file($_FILES["foto"]["tmp_name"], $arquivo_selecionado)) {
