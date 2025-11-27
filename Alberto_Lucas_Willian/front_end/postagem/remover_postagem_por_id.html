@@ -13,8 +13,8 @@
     <button type="submit">Enviar</button>
 
     <script>
-        let id_selecionado = document.querySelector("#input_id")
-        let postagem = { postagem_id: `${id_selecionado}` };
+        let id = document.querySelector("#input_id")
+        let postagem = { postagem_id: id };
         let isLoading = false;
 
         function getPostagens(){
@@ -39,6 +39,7 @@
             .finally(()=>{
                 isLoading = false;
             })
+            id.value = "";
         }
 
         getPostagens(); // Buscar Dados

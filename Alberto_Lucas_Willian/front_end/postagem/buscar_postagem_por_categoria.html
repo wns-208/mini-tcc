@@ -10,14 +10,14 @@
 
     <label for="input_categoria">Digite a categoria que deseja</label>
     <input type="text" name="input_categoria" id="input_categoria">
-    <button type="submit">Enviar</button>
+    <button type="submit" onclick="getPostagens()">Enviar</button>
 
     <script>
-        let categoria_selecionada = document.querySelector("#input_categoria")
-        let postagem = { postagem_categoria: `${categoria_selecionada}` };
         let isLoading = false;
-
+        
         function getPostagens(){
+            let categoria_selecionada = document.querySelector("#input_categoria")
+            let postagem = { postagem_categoria: `${categoria_selecionada}` };
                 isLoading = true;
 
             fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_postagem/buscar_postagem_por_categoria.php',
@@ -39,9 +39,9 @@
             .finally(()=>{
                 isLoading = false;
             })
+            categoria_selecionada = document.querySelector("#input_categoria")
+            categoria_selecionada.value = ""
         }
-
-        getPostagens(); // Buscar Dados
     </script>
     
     

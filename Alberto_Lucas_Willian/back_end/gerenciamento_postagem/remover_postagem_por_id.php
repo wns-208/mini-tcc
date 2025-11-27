@@ -15,9 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
 	// "postagem_id" é o nome da coluna que está sendo enviado pelo cliente
 
     // Deleta a postagem selecionado pelo ID
-	$sql = "DELETE FROM postagem WHERE postagem_id='$id'";
+    $remover_por_id = $connection->prepare("DELETE FROM postagem WHERE postagem_id = ?");
+    $remover_por_id->bind_param("i", $codigo_id);
 
-    if ($connection->query($sql) === true) {
+    if ($connection->query($remover_por_id) === true) {
         $response = [
             'mensagem' => 'Postagem apagada com sucesso!'
         ];

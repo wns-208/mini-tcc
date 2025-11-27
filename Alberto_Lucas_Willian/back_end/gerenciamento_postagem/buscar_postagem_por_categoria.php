@@ -13,9 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $categoria = $requestData->postagem_categoria;
 
     // Realiza a busca da postagem em acordo com "postagem_categoria"
-	$sql = "SELECT * FROM postagem WHERE postagem_categoria = '$categoria'";
-
-    $result = $connection->query($sql);
+    $busca_por_categoria = $connection->prepare("SELECT * FROM postagem WHERE postagem_categoria = ?");
+    $busca_por_categoria->bind_param("s", $categoria);
+    $busca_por_categoria->execute();
+    $result = $busca_por_categoria->get_result();
 
     if ($result->num_rows > 0) {
         $postagens = [];

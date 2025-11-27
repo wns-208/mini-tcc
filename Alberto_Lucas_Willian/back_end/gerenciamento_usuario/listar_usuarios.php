@@ -5,9 +5,8 @@
     // Realiza a busca completa de todos os usuarios registrados
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-	$sql = "SELECT * FROM usuario";
-
-    $result = $connection->query($sql);
+    $buscar_todos = ("SELECT * FROM usuario");
+    $result = $connection->query($buscar_todos);
 
     if ($result->num_rows > 0) {
         $usuarios = [];

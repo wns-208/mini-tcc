@@ -8,13 +8,13 @@
   </head>
   <body>
 
-    <label for="input_id">Digite o ID do usuario</label>
-    <input type="number" name="input_id" id="input_id">
+    <label for="inputId">Digite o ID do usuario</label>
+    <input type="number" name="inputId" id="inputId">
     <button type="submit">Enviar</button>
 
     <script>
-        let id_selecionado = document.querySelector("#input_id")
-        let usuario = { usuario_id: `${id_selecionado}` };
+        let id = document.querySelector("#inputId")
+        let usuario = { usuario_id: id };
         let isLoading = false;
 
         function getUsuarios(){
@@ -39,6 +39,7 @@
             .finally(()=>{
                 isLoading = false;
             })
+            id.value = ""
         }
 
         getUsuarios(); // Buscar Dados

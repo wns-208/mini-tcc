@@ -10,13 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $requestData = json_decode($data);
     
     // Agora você pode acessar os dados usando $requestData
-    $id = $requestData->usuario_id;
+    $codigo_id = $requestData->usuario_id;
 
     // Realiza a busca do usuario em acordo com o ID do usuario
-	$sql = "SELECT * FROM usuario WHERE usuario_id = '$id'";
-
-    $result = $connection->query($sql);
-
+    $busca_por_id = $connection->prepare("SELECT * FROM usuario WHERE usuario_id = ?");
+    $busca_por_id->bind_param("i", $codigo_id);
+    $busca_por_id->execute();
+    $result = $busca_por_id->get_result();
+    
     if ($result->num_rows > 0) {
         $usuarios = [];
         while ($row = $result->fetch_assoc()) {
@@ -29,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } else {
         $response = [
-            'usuarios' => 'O ID inserido não existe.'
+            'usuarios' => 'Nenhum registro encontrado!'
         ];
     }
 

@@ -15,9 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
 	// "usuario_id" é o nome da coluna que está sendo enviado pelo cliente
 
     // Deleta o usuario selecionado pelo ID
-	$sql = "DELETE FROM usuario WHERE usuario_id='$id'";
+    $remover_por_id = $connection->prepare("DELETE FROM usuario WHERE usuario_id = ?");
+    $remover_por_id->bind_param("i", $id);
+    $remover_por_id->execute();
 
-    if ($connection->query($sql) === true) {
+    if ($remover_por_id->affected_rows == 1) {
         $response = [
             'mensagem' => 'Registro apagado com sucesso!'
         ];

@@ -13,6 +13,7 @@ $id_usuario = $_SESSION["id"];
 <?php
 $pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/front_end/usuarios/assests/perfil/";
 $arquivo_selecionado = $pasta_final.basename($_FILES["foto"]["name"]);
+$arquivo_filtrado = basename($arquivo_selecionado);
 $validacao = explode(".", basename($arquivo_selecionado));
 
 if ($validacao[1] == "jpeg") {
@@ -20,7 +21,7 @@ if ($validacao[1] == "jpeg") {
 
         if (move_uploaded_file($_FILES["foto"]["tmp_name"], $arquivo_selecionado)) {
             $atualizar_foto_perfil = $connection->prepare("UPDATE usuario SET usuario_foto_perfil = ? WHERE usuario_id = ?");
-            $atualizar_foto_perfil->bind_param("si", basename($arquivo_selecionado), $id_usuario);
+            $atualizar_foto_perfil->bind_param("si", $arquivo_filtrado, $id_usuario);
 
             if ($atualizar_foto_perfil->execute()) {
                 echo "Foto de perfil autualizada";
