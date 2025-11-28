@@ -8,16 +8,16 @@
   </head>
   <body>
 
-    <label for="inputId">Digite o ID do usuario</label>
-    <input type="number" name="inputId" id="inputId">
-    <button type="submit">Enviar</button>
+        <label for="inputId">Digite o ID</label>
+        <input type="number" name="inputId" id="inputId" required>
+        <button type="submit" onclick="getUsuarios()">Enviar</button>
 
     <script>
-        let id = document.querySelector("#inputId")
-        let usuario = { usuario_id: id };
         let isLoading = false;
-
+        
         function getUsuarios(){
+            let id = document.querySelector("#inputId").value
+            let usuario = { usuario_id: id };
                 isLoading = true;
 
             fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_usuario/remover_usuario_por_id.php',
@@ -39,10 +39,7 @@
             .finally(()=>{
                 isLoading = false;
             })
-            id.value = ""
         }
-
-        getUsuarios(); // Buscar Dados
     </script>
     
     

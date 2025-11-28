@@ -10,15 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
     $requestData = json_decode($data);
 
     // Agora você pode acessar os dados usando $requestData
-    $id = $requestData->cadastro_id;
+    $id = $requestData->postagem_id;
 
 	// "postagem_id" é o nome da coluna que está sendo enviado pelo cliente
 
     // Deleta a postagem selecionado pelo ID
     $remover_por_id = $connection->prepare("DELETE FROM postagem WHERE postagem_id = ?");
-    $remover_por_id->bind_param("i", $codigo_id);
+    $remover_por_id->bind_param("i", $id);
+    $remover_por_id->execute();
 
-    if ($connection->query($remover_por_id) === true) {
+    if ($remover_por_id->affected_rows >= 1) {
         $response = [
             'mensagem' => 'Postagem apagada com sucesso!'
         ];

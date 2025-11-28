@@ -8,16 +8,16 @@
   </head>
   <body>
 
-    <label for="input_id">Digite o ID da postagem</label>
-    <input type="number" name="input_id" id="input_id">
+    <label for="inputId">Digite o ID da postagem</label>
+    <input type="number" name="inputId" id="inputId">
     <button type="submit">Enviar</button>
 
     <script>
-        let id = document.querySelector("#input_id")
-        let postagem = { postagem_id: id };
         let isLoading = false;
-
+        
         function getPostagens(){
+            let id = document.querySelector("#inputId").value
+            let postagem = { postagem_id: id };
                 isLoading = true;
 
             fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_postagem/remover_postagem_por_id.php',
@@ -39,7 +39,8 @@
             .finally(()=>{
                 isLoading = false;
             })
-            id.value = "";
+            let clearId = document.querySelector("#inputId")
+            clearId.value = ""
         }
 
         getPostagens(); // Buscar Dados

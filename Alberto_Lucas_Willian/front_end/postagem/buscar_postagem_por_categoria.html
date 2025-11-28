@@ -8,15 +8,15 @@
   </head>
   <body>
 
-    <label for="input_categoria">Digite a categoria que deseja</label>
-    <input type="text" name="input_categoria" id="input_categoria">
+    <label for="inputCategoria">Digite a categoria que deseja</label>
+    <input type="text" name="inputCategoria" id="inputCategoria">
     <button type="submit" onclick="getPostagens()">Enviar</button>
 
     <script>
         let isLoading = false;
         
         function getPostagens(){
-            let categoria_selecionada = document.querySelector("#input_categoria")
+            let categoria_selecionada = document.querySelector("#inputCategoria")
             let postagem = { postagem_categoria: `${categoria_selecionada}` };
                 isLoading = true;
 
@@ -39,8 +39,8 @@
             .finally(()=>{
                 isLoading = false;
             })
-            categoria_selecionada = document.querySelector("#input_categoria")
-            categoria_selecionada.value = ""
+            limparCategoria = document.querySelector("#inputCategoria")
+            limparCategoria.value = ""
         }
     </script>
     
