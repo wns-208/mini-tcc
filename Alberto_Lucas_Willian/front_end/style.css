@@ -4,17 +4,27 @@
   font-style: normal;
 } */
 
+/* .reem-kufi-<uniquifier> {
+  font-family: "Reem Kufi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
 .jersey{
     font-family: "Jersey 20", sans-serif;
+}
+.reem_kufi{
+  font-family: "Reem Kufi", sans-serif;
 }
 .titulo_banner{
    font-family: "Jersey 20", sans-serif;
    color: #FFFFFF;
 }
 
-/* * {
+* {
     outline: 1px solid red;
-} */
+}
 
 .logo{
   height: 28px;
@@ -28,3 +38,29 @@
 .bannerzin{
   background-image: url('./Pasta_Front_do_FIgma_100%/página1/13476684-fundo-gradiente-abstrato-de-turquesa-a-agua-marinha-gratis-vetor.jpg');
 }
+/* botões dos temas */
+.hardwares{
+  background-color: #8C1F28;
+  color: #FFFFFF;
+}
+
+.appm{
+  background-color: #044040;
+  color: #FFFFFF;
+}
+
+.site{
+  background-color: #D92525;
+  color: #FFFFFF;
+}
+
+.softwares{
+  background-color: #014034;
+  color: #FFFFFF;
+}
+
+.arduinos{
+  background-color: #36BFB1;
+  color: #FFFFFF;
+}
+
