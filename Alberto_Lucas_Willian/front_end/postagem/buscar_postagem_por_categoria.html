@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buscar postagens por categoria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <label for="inputCategoria">Digite a categoria que deseja</label>
+    <input type="text" name="inputCategoria" id="inputCategoria">
+    <button type="submit" onclick="getPostagens()">Enviar</button>
+
+    <script>
+        let isLoading = false;
+        
+        function getPostagens(){
+            let categoria_selecionada = document.querySelector("#inputCategoria")
+            let postagem = { postagem_categoria: `${categoria_selecionada}` };
+                isLoading = true;
+
+            fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_postagem/buscar_postagem_por_categoria.php',
+                    {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(postagem)
+                    }
+                )
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+            })
+            .catch(erro => {
+                console.log(erro);
+            })
+            .finally(()=>{
+                isLoading = false;
+            })
+            limparCategoria = document.querySelector("#inputCategoria")
+            limparCategoria.value = ""
+        }
+    </script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    
+</body>
+</html>
