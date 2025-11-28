@@ -1,6 +1,7 @@
 <?php
 include "../Alberto_Lucas_Willian/back_end/conexao.php";
 session_start();
+$id_usuario = $_SESSION["id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +16,9 @@ session_start();
 
 <div class="container mt-4">
 <div claas="card shadow-sm p-4">
- <h3 class="mb-4">Cadastro</h3>   
+ <h3 class="mb-4">Editar informações</h3>   
 
-<form action="cadastro.php" method="POST">
+<form action="editarUsuario.php" method="POST">
     <div class="row">
     <div class="col-md-6 mb-3">
    <label class="form-label" for="usuario_nome">Nome do Usuario</label>
@@ -38,7 +39,7 @@ session_start();
     </div>
     </div>
 
-   <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
+   <button class="btn btn-primary w-100" type="submit">Editar</button>
 </form>
 </div>
 </div>
@@ -53,16 +54,12 @@ $usuario_nome = isset($_POST['usuario_nome']) ? $_POST['usuario_nome'] : exit();
 $usuario_email = isset($_POST['usuario_email']) ? $_POST['usuario_email'] : exit();
 $usuario_senha = isset($_POST['usuario_senha']) ? $_POST['usuario_senha'] : exit();
 
-$insert_usuario = $connection->prepare("INSERT INTO usuario (usuario_nome, usuario_email, usuario_senha) VALUES (?, ?, ?)");
-$insert_usuario->bind_param("sss", $usuario_nome, $usuario_email, $usuario_senha);
-
-
-if ($insert_usuario->execute()) {
-    $ultimo_id = mysqli_insert_id($connection);
-    $_SESSION["id"] = $ultimo_id;
+$update = $connection->prepare("UPDATE usuario SET usuario_nome = ?, usuario_senha = ?, usuario_email = ? WHERE usuario_id = ?");
+$update->bind_param("sssi", $usuario_nome, $usuario_email, $usuario_senha, $id_usuario);
+if ($update->execute()) {
     header("location: menu.html");
 } else {
-    echo "Erro: " . $insert_usuario->error;
+    echo "Erro: " . $update->error;
 }
 
 $_SESSION["id"] = $ultimo_id;
