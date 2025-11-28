@@ -4,10 +4,27 @@
   font-style: normal;
 } */
 
-.tecnoblog{
+.jersey{
     font-family: "Jersey 20", sans-serif;
 }
+.titulo_banner{
+   font-family: "Jersey 20", sans-serif;
+   color: #FFFFFF;
+}
 
-* {
+/* * {
     outline: 1px solid red;
+} */
+
+.logo{
+  height: 28px;
+  width: 33px;
+}
+
+.arduino{
+  width: 350px;
+}
+
+.bannerzin{
+  background-image: url('./Pasta_Front_do_FIgma_100%/página1/13476684-fundo-gradiente-abstrato-de-turquesa-a-agua-marinha-gratis-vetor.jpg');
 }
