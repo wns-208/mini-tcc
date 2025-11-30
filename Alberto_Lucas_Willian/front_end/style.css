@@ -1,4 +1,3 @@
-
 /* .jersey-20-regular {
   font-family: "Jersey 20", sans-serif;
   font-weight: 400;
@@ -12,6 +11,14 @@
   font-style: normal;
 } */
 
+/* --------------- Página 1 (principal) ----------------------- */
+
+ .b_nav{
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
 
 
 .jersey{
@@ -25,9 +32,9 @@
    color: #FFFFFF;
 }
 
-* {
+/* * {
     outline: 1px solid red;
-}
+} */
 
 .logo{
   height: 28px;
@@ -45,48 +52,92 @@
 
 /* botões dos temas */
 .hardwares{
-  border-radius: 10%;
-  height: 75px;
-  width: 250px;
   background-color: #8C1F28;
   color: #FFFFFF;
-  margin: 5px;
 }
 
 .appm{
-  border-radius: 10%;
-  height: 75px;
-  width: 250px;
   background-color: #044040;
   color: #FFFFFF;
-  margin: 5px;
 }
 
 .site{
-  border-radius: 10%;
-   height: 75px;
-  width: 250px;
   background-color: #D92525;
   color: #FFFFFF;
-  margin: 5px;
 }
 
 .softwares{
-  border-radius: 10%;
-   height: 75px;
-  width: 250px;
   background-color: #014034;
   color: #FFFFFF;
-  margin: 5px;
 }
 
 .arduinos{
-  border-radius: 10%;
-   height: 75px;
-  width: 250px;
   background-color: #36BFB1;
   color: #FFFFFF;
-  margin: 5px;
 }
 
+/* hover btn */
 
+.hardwares:hover{
+  background-image: url('./Pasta_Front_do_FIgma_100%/página1/download.webp');
+  color: #FFFFFF;
+}
+
+.appm:hover{
+  background-image: url('./Pasta_Front_do_FIgma_100%/página1/5-6.webp');
+  color: #FFFFFF;
+}
+
+.site:hover{
+  background-image: url('./Pasta_Front_do_FIgma_100%/página1/modelo-de-design-de-site-de-interface-do-usuario_23-2149182791.png');
+  color: #FFFFFF;
+}
+
+.softwares:hover{
+  background-image: url('./Pasta_Front_do_FIgma_100%/página1/Mockflow.webp');
+  color: #FFFFFF;
+}
+
+.arduinos:hover{
+  background-image: url('./Pasta_Front_do_FIgma_100%/página1/o-que-e-arduino.jpg');
+  color: #FFFFFF;
+}
+
+/* @media só de height -> btões */
+
+/* Extra small: col- (0px+) — não precisa de media query */
+
+/* Small — col-sm- */
+@media (min-width: 576px) {
+  .botao1{
+
+  }
+}
+
+/* Medium — col-md- */
+@media (min-width: 768px) {
+    .botao1{
+    
+  }
+}
+
+/* Large — col-lg- */
+@media (min-width: 992px) {
+    .botao1{
+    
+  }
+}
+
+/* Extra large — col-xl- */
+@media (min-width: 1200px) {
+    .botao1{
+    
+  }
+}
+
+/* Extra extra large — col-xxl- */
+@media (min-width: 1400px) {
+    .botao1{
+    
+  }
+}
