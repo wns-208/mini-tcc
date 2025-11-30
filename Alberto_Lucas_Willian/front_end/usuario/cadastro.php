@@ -15,36 +15,57 @@
 
 
 
+
 <div class="container mt-4 d-flex justify-content-end align-items-center">
+
+<!-- <div class="row">
+    <div class="teste">
+        <div class="col-6"></div>
+    </div>
+</div> -->
     <div class="formulario">
-        <h3 class="mb-4">cadastro</h3>   
+     
+   
 
-        <form action="cadastro.php" method="POST">
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <label class="form-label" for="nome">Nome do Usuario</label>
-                    <input class="form-control" type="text" name="nome" id="nome" autocomplete="on" required>
-                </div>
-            </div>
+        <div class="container">
+   
+            <form action="cadastro.php" method="POST">
+                
+            
+   
 
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <label class="form-label" for="email">Email</label>
-                    <input class="form-control" type="email" name="email" id="email">
-                </div>
-            </div>
 
-            <div class="col-md-12 mb-3">
-                <label class="form-label" for="senha">Senha</label>
-                <input class="form-control" type="password" name="senha" id="senha">
-            </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label" for="nome">Nome do Usuario</label>
+                            <input class="form-control" type="text" name="nome" id="nome" autocomplete="on" required>
+                        </div>
+                    </div>
 
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
-                </div>
-            </div>
-        </form>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" type="email" name="email" id="email autocomplete="on" required">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label" for="senha">Senha</label>
+                        <input class="form-control" type="password" name="senha" id="senha autocomplete="on" required">
+                    </div>
+                    
+                    <p>ja tem uma conta? <a href="login.php">entrar</a></p>
+                    
+
+                <div class="botao">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>    
+                </form>
+            </div>    
     
 </div>
 
