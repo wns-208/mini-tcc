@@ -11,6 +11,8 @@
   font-style: normal;
 } */
 
+
+
 .jersey{
     font-family: "Jersey 20", sans-serif;
 }
@@ -38,29 +40,46 @@
 .bannerzin{
   background-image: url('./Pasta_Front_do_FIgma_100%/página1/13476684-fundo-gradiente-abstrato-de-turquesa-a-agua-marinha-gratis-vetor.jpg');
 }
+
+
 /* botões dos temas */
 .hardwares{
+  height: 75px;
+  width: 250px;
   background-color: #8C1F28;
   color: #FFFFFF;
+  margin: 5px;
 }
 
 .appm{
+  height: 75px;
+  width: 250px;
   background-color: #044040;
   color: #FFFFFF;
+  margin: 5px;
 }
 
 .site{
+   height: 75px;
+  width: 250px;
   background-color: #D92525;
   color: #FFFFFF;
+  margin: 5px;
 }
 
 .softwares{
+   height: 75px;
+  width: 250px;
   background-color: #014034;
   color: #FFFFFF;
+  margin: 5px;
 }
 
 .arduinos{
+   height: 75px;
+  width: 250px;
   background-color: #36BFB1;
   color: #FFFFFF;
+  margin: 5px;
 }
 
