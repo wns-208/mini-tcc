@@ -44,6 +44,7 @@
 
 /* botões dos temas */
 .hardwares{
+  border-radius: 10%;
   height: 75px;
   width: 250px;
   background-color: #8C1F28;
@@ -52,6 +53,7 @@
 }
 
 .appm{
+  border-radius: 10%;
   height: 75px;
   width: 250px;
   background-color: #044040;
@@ -60,6 +62,7 @@
 }
 
 .site{
+  border-radius: 10%;
    height: 75px;
   width: 250px;
   background-color: #D92525;
@@ -68,6 +71,7 @@
 }
 
 .softwares{
+  border-radius: 10%;
    height: 75px;
   width: 250px;
   background-color: #014034;
@@ -76,6 +80,7 @@
 }
 
 .arduinos{
+  border-radius: 10%;
    height: 75px;
   width: 250px;
   background-color: #36BFB1;
