@@ -1,7 +1,14 @@
-body{
+/* body{
     background-image: url("../Pasta_Front_do_FIgma_100%/login_cadastro/Pagina_Cadastro.png");
     background-repeat: no-repeat;
     background-position-y: center;
+} */
+
+.img-esquerda {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh; /* opcional: faz a imagem ter altura da tela */
 }
 
 .container.mt-4.d-flex.justify-content-end{

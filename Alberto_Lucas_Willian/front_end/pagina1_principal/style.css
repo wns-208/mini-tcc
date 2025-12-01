@@ -10,7 +10,10 @@
   font-weight: <weight>;
   font-style: normal;
 } */
-
+html, body { 
+  margin:0; 
+  padding:0; 
+}
 /* --------------- Página 1 (principal) ----------------------- */
 
  .b_nav{

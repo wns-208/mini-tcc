@@ -14,6 +14,7 @@
 </head>
 <body>
 
+<img class="img-esquerda" src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" alt="foto do pc">
 
 
 
@@ -46,13 +47,13 @@
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="email">Email</label>
-                            <input class="form-control" type="email" name="email" id="email autocomplete="on" required">
+                            <input class="form-control" type="email" name="email" id="email" autocomplete="on" required">
                         </div>
                     </div>
 
                     <div class="col-md-12 mb-3">
                         <label class="form-label" for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha autocomplete="on" required">
+                        <input class="form-control" type="password" name="senha" id="senha" autocomplete="on" required">
                     </div>
                     
                     <p>ja tem uma conta? <a href="login.php">entrar</a></p>

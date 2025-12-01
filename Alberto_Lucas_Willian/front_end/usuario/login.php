@@ -13,7 +13,7 @@
 </head>
 <body>
 
-
+<img class="img-esquerda" src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" alt="foto do pc">
 
 <div class="container mt-4 d-flex justify-content-end align-items-center">
     <div class="formulario">
