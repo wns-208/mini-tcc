@@ -1,0 +1,57 @@
+body{
+    background-image: url("../Pasta_Front_do_FIgma_100%/login_cadastro/Pagina_Cadastro.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+.container.mt-4.d-flex.justify-content-end{
+    height: 700px;
+    
+}
+
+.formulario{
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .row{
+   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+    justify-content: center;
+    margin: 5px;
+} */
+
+.botao{
+    width: 400px;
+    height: 250px;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    
+}
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+/* .teste{
+    border: 1px solid red;
+    width: 380px;
+    height: 700px;
+    margin: 5px;
+}
+.redes_socias{
+    border: 1px solid red;
+    width: 380px;
+    height: 100px;
+} */

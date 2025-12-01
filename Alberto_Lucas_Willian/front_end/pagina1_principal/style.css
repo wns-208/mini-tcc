@@ -1,0 +1,300 @@
+/* .jersey-20-regular {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+/* .reem-kufi-<uniquifier> {
+  font-family: "Reem Kufi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* --------------- Página 1 (principal) ----------------------- */
+
+ .b_nav{
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+.jersey{
+    font-family: "Jersey 20", sans-serif;
+}
+.reem_kufi{
+  font-family: "Reem Kufi", sans-serif;
+}
+.titulo_banner{
+   font-family: "Jersey 20", sans-serif;
+   color: #FFFFFF;
+}
+
+/* * {
+    outline: 1px solid red;
+} */
+
+.logo{
+  height: 28px;
+  width: 33px;
+}
+
+.arduino{
+  width: 350px;
+}
+
+.bannerzin{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/13476684-fundo-gradiente-abstrato-de-turquesa-a-agua-marinha-gratis-vetor.jpg');
+  background-size: cover;      /* faz preencher toda a área */
+  background-position: center; /* centraliza o gradiente */
+  background-repeat: no-repeat;
+  width: 100%;                 /* garante largura total */
+}
+
+
+/* botões dos temas */
+.hardwares{
+  background-color: #8C1F28;
+  color: #FFFFFF;
+}
+
+.appm{
+  background-color: #044040;
+  color: #FFFFFF;
+}
+
+.site{
+  background-color: #D92525;
+  color: #FFFFFF;
+}
+
+.softwares{
+  background-color: #014034;
+  color: #FFFFFF;
+}
+
+.arduinos{
+  background-color: #36BFB1;
+  color: #FFFFFF;
+}
+
+/* hover btn */
+
+.hardwares:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/download.webp');
+  background-position-x: center;
+  background-position-y: center;
+  color: #FFFFFF;
+}
+
+.appm:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/5-6.webp');
+  color: #FFFFFF;
+}
+
+.site:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/modelo-de-design-de-site-de-interface-do-usuario_23-2149182791.png');
+  color: #FFFFFF;
+}
+
+.softwares:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/Mockflow.webp');
+  color: #FFFFFF;
+}
+
+.arduinos:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/o-que-e-arduino.jpg');
+  color: #FFFFFF;
+}
+
+.imagem1{
+  max-width: 200px; 
+  height: auto;
+  border-radius: 8px;
+}
+
+.imagem2{
+  max-width: 200px; 
+  height: auto;
+  border-radius: 8px;
+}
+
+.botao1{
+  border-radius: 16px;
+}
+
+/* Container fixo no rodapé */
+.menu-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 80px;
+    height: 80px;
+    z-index: 2000;
+}
+
+/* Botão principal */
+.fab {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Itens escondidos inicialmente */
+.item {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+
+    transform: translateY(0) rotate(0deg) scale(0);
+    opacity: 0;
+
+    transition:
+        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.3s ease;
+}
+
+.item1 { background: #ff006a; }
+.item2 { background: #7b2fff; }
+.item3 { background: #ffa400; }
+
+/* Botões animando (subindo + girando + aparecendo) */
+.menu-container.active .item1 {
+    transform: translate(-70px, -10px) rotate(360deg) scale(1);
+    opacity: 1;
+}
+.menu-container.active .item2 {
+    transform: translate(-50px, -80px) rotate(360deg) scale(1);
+    opacity: 1;
+}
+.menu-container.active .item3 {
+    transform: translate(20px, -70px) rotate(360deg) scale(1);
+    opacity: 1;
+}
+
+/* FAB vira X */
+.menu-container.active .fab {
+    transform: rotate(45deg);
+}
+
+/* @media só de height -> btões */
+
+/* Extra small: col- (0px+) — não precisa de media query */
+
+/* Small — col-sm- */
+@media (min-width: 576px) {
+  .botao1{
+
+  }
+}
+
+/* Medium — col-md- */
+@media (min-width: 768px) {
+    .botao1{
+    
+  }
+}
+
+/* Large — col-lg- */
+@media (min-width: 992px) {
+    .botao1{
+    
+  }
+}
+
+/* Extra large — col-xl- */
+@media (min-width: 1200px) {
+    .botao1{
+    
+  }
+}
+
+/* Extra extra large — col-xxl- */
+@media (min-width: 1400px) {
+    .botao1{
+    height: 76px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .botao1 span{
+        position: relative;
+    z-index: 1;
+  }
+
+  .botao1:hover::before{
+    filter: blur(2px); /* intensidade do blur */
+}
+
+  .botao1:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/download.webp');
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+  color: #FFFFFF;
+}
+
+.appm:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/5-6.webp');
+  color: black;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+}
+
+.site:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/modelo-de-design-de-site-de-interface-do-usuario_23-2149182791.png');
+  color: #FFFFFF;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+}
+
+.softwares:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/Mockflow.webp');
+  color: black;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+}
+
+.arduinos:hover{
+  background-image: url('../Pasta_Front_do_FIgma_100%/página1/o-que-e-arduino.jpg');
+  color: #FFFFFF;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+}
+}
+
+
+
+/* Garante que os botões grandes somem em XS e SM */
+@media (max-width: 767px) {
+    .botao1 {
+        display: none !important;
+    }
+}
+
+/* Garante que o menu flutuante some em mídias maiores */
+@media (min-width: 768px) {
+    .menu-container {
+        display: none !important;
+    }
+}
