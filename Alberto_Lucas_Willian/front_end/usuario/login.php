@@ -45,7 +45,7 @@
             <div class="botao">
                 <div class="row">
                     <div class="col-md-12 mb-3">
-                        <button class="btn btn-primary w-100" type="submit">entrar</button>
+                        <a href="../pagina1_principal/index.html" class="btn btn-primary w-100">Entrar</a>
                     </div>
                 </div>
             </div>    

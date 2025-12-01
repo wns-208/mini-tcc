@@ -5,10 +5,13 @@
 } */
 
 .img-esquerda {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh; /* opcional: faz a imagem ter altura da tela */
+   .img-esquerda {
+    width: 50px;        /* imagem ocupa toda a coluna */
+    height: 500px;      /* mesma altura da tela */
+/* corta sem distorcer */
+}
+
+    
 }
 
 .container.mt-4.d-flex.justify-content-end{
