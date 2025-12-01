@@ -1,6 +1,7 @@
 body{
-    height:700px;
     background-image: url("../Pasta_Front_do_FIgma_100%/login_cadastro/Pagina_Cadastro.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
 }
 
 .container.mt-4.d-flex.justify-content-end{
