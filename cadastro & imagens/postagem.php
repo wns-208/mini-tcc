@@ -1,7 +1,7 @@
 <?php
 include "../Alberto_Lucas_Willian/back_end/conexao.php";
 session_start();
-$id_usuario = $_SESSION["id"]
+$id_usuario = $_SESSION["id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +21,14 @@ $id_usuario = $_SESSION["id"]
 <form action="postagem.php" method="POST" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-6 mb-3">
-    <label for="titulo_postagem">Titulo da postagem</label>
-   <input class="form-control" type="text" name="titulo_postagem" id="titulo_postagem" autocomplete="off" required>
+    <label for="postagem_titulo">Titulo da postagem</label>
+   <input class="form-control" type="text" name="postagem_titulo" id="postagem_titulo" autocomplete="off" required>
    </div>
    </div>
 
     <div class="row">
     <div class="col-md-6 mb-3">
-       <label for="postagem_imagem">Imagem da postagem</label>
+       <label for="postagem_imagem">Imagem da postagem (OPCIONAL)</label>
    <input class="form-control" type="file" name="postagem_imagem" id="postagem_imagem" autocomplete="off">
    </div>
    </div>
@@ -46,7 +46,7 @@ $id_usuario = $_SESSION["id"]
     </div>
     </div>
 
-   <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
+   <button class="btn btn-primary w-100" type="submit" name="enviar">Cadastrar</button>
 </form>
 </div>
 </div>
@@ -57,27 +57,30 @@ $id_usuario = $_SESSION["id"]
 
 <?php 
 
+$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/front_end/postagem/assests/postagem_imagem/";
+$arquivo_selecionado = $pasta_final.basename($_FILES["postagem_imagem"]["name"]);
+$arquivo_filtrado = basename($arquivo_selecionado);
+$validacao = explode(".", basename($arquivo_selecionado));
+
 $postagem_titulo = isset($_POST['postagem_titulo']) ? $_POST['postagem_titulo'] : exit();
 $postagem_conteudo = isset($_POST['postagem_conteudo']) ? $_POST['postagem_conteudo'] : exit();
 $postagem_categoria = isset($_POST['postagem_categoria']) ? $_POST['postagem_categoria'] : exit();
 
-$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/front_end/postagem/assests/postagem_imagem/";
-$arquivo_selecionado = $pasta_final.basename($_FILES["foto"]["name"]);
-$validacao = explode(".", basename($arquivo_selecionado));
-
 $insert_postagem = $connection->prepare("INSERT INTO postagem (postagem_titulo, postagem_conteudo, postagem_categoria, postagem_id_usuario) VALUES (?, ?, ?, ?)");
 $insert_postagem->bind_param("sssi", $postagem_titulo, $postagem_conteudo, $postagem_categoria, $id_usuario);
 $insert_postagem->execute();
+$ultimo_id = mysqli_insert_id($connection);
 
-if ($validacao[1] == "jpeg") {
-    if (isset($_POST["enviar"]) && $_FILES["foto"]["error"] == UPLOAD_ERR_OK) {
-        if (move_uploaded_file($_FILES["foto"]["tmp_name"], $arquivo_selecionado)) {
-            echo 'A foto ' . htmlspecialchars(basename($_FILES["foto"]["name"])) . ' foi enviada.';
-        }
-        else {
-            echo 'Aceitamos JPEG somente';
+    if ($validacao[1] == "jpeg") {
+        if (isset($_POST["enviar"]) && $_FILES["postagem_imagem"]["error"] == UPLOAD_ERR_OK) {
+            if (move_uploaded_file($_FILES["postagem_imagem"]["tmp_name"], $arquivo_selecionado)) {
+                $update_imagem = $connection->prepare("UPDATE postagem SET postagem_imagem = ? WHERE postagem_id = ?");
+                $update_imagem->bind_param("si", $arquivo_filtrado, $ultimo_id);
+                $update_imagem->execute();
+            }
+            else {
+                echo 'Aceitamos JPEG somente';
+            }
         }
     }
-}
-
 ?>
