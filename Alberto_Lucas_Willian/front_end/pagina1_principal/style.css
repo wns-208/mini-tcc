@@ -137,6 +137,18 @@ html, body {
   border-radius: 16px;
 }
 
+.rolagem{
+  overflow-y: scroll;
+  max-height: 122px;
+}
+
+.textin{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* quantidade de linhas que você quer */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 /* Container fixo no rodapé */
 .menu-container {
     /* position: fixed; */
@@ -191,16 +203,15 @@ html, body {
   object-fit: contain;
 }
 
-.item1 { background: #ff006a; }
-.item2 { background: #7b2fff; }
-.item3 { background: #ffa400; }
-.item4 { background: #ffa400; }
-.item5 { background: #ffa400; }
-.item6 { background: #ffa400; }
+.item1 { background: #36BFB1; }
+.item2 { background: #D92525; }
+.item3 { background: #044040; }
+.item4 { background: #014034; }
+.item5 { background: #8C1F28; }
 
 /* Botões animando (subindo + girando + aparecendo) */
 .menu-container.active .item1 {
-    transform: translate(-70px, -10px) rotate(360deg) scale(1);
+    transform: translate(/* alinhamento x */-70px, /* alinhamento y */ 5px) rotate(360deg) scale(1);
     opacity: 1;
 }
 .menu-container.active .item2 {
@@ -208,12 +219,17 @@ html, body {
     opacity: 1;
 }
 .menu-container.active .item3 {
-    transform: translate(/* alinhamento y */80px, /* alinhamento x */-10px) rotate(360deg) scale(1);
+    transform: translate(/* alinhamento x */-50px, /* alinhamento y */-55px) rotate(360deg) scale(1);
     opacity: 1;
 }
 
 .menu-container.active .item4 {
-  transform: translate(/* alinhamento y */40px, /* alinhamento x */5px) rotate(360deg) scale(1);
+  transform: translate(/* alinhamento x */60px, /* alinhamento y */-55px) rotate(360deg) scale(1);
+  opacity: 1;
+}
+
+.menu-container.active .item5 {
+  transform: translate(/* alinhamento x */70px, /* alinhamento y */5px) rotate(360deg) scale(1);
   opacity: 1;
 }
 
@@ -221,6 +237,18 @@ html, body {
 .menu-container.active .fab {
     transform: rotate(45deg);
 }
+
+.footer-banner {
+    width: 100%;
+    height: 100px; /* ajuste como quiser */
+    background-image: url("../Pasta_Front_do_FIgma_100%/página1/4708645-fundo-azul-e-branco-limpo-e-moderno-ondulado-vetor-removebg-preview.png");
+    background-size: cover;       /* preenche toda a largura */
+    /* background-position: center;  */
+    background-position-y: -469px;
+    background-repeat: no-repeat; /* não repete */
+}
+
+
 
 
 /* @media só de height -> btões */

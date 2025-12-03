@@ -1,0 +1,68 @@
+body {
+background-image: url('../Pasta_Front_do_FIgma_100%/página de configuração do usuário/blue-ombre-background-1920-x-1080-clk1z7m1ngkj9s7z.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+font-family: 'Segoe UI', sans-serif;
+}
+
+
+.card-container {
+background-image: url('../Pasta_Front_do_FIgma_100%/página de configuração do usuário/Frame 29.png');
+background-position-x: center;
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 20px;
+padding: 40px;
+max-width: 900px;
+margin: 60px auto;
+box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+
+.header-bar {
+width: 100%;
+height: 120px;
+border-radius: 20px 20px 0 0;
+background: linear-gradient(90deg, #0ba6c9, #004f6e);
+}
+
+
+.preview-img {
+width: 100%;
+border-radius: 12px;
+margin-bottom: 20px;
+}
+
+
+.btn-custom {
+background: #0034c8;
+color: white;
+padding: 10px 30px;
+border-radius: 25px;
+transition: 0.3s;
+}
+
+
+.btn-custom:hover {
+filter: blur(1px);
+background: #0028a1;
+}
+
+.imagem_daora{
+    margin-top: 80px;
+}
+
+/* Foto do autor */
+.autor-foto {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Texto da descrição */
+.texto-desc {
+    font-size: 15px;
+    line-height: 1.6;
+}
