@@ -1,0 +1,115 @@
+/* .jersey-20-regular {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+/* .reem-kufi-<uniquifier> {
+  font-family: "Reem Kufi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+html, body { 
+  margin:0; 
+  padding:0; 
+}
+/* --------------- Página 1 (principal) ----------------------- */
+
+ .b_nav{
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+.jersey{
+    font-family: "Jersey 20", sans-serif;
+}
+.reem_kufi{
+  font-family: "Reem Kufi", sans-serif;
+}
+.titulo_banner{
+   font-family: "Jersey 20", sans-serif;
+   color: #FFFFFF;
+}
+
+/* * {
+    outline: 1px solid red;
+} */
+
+.logo{
+  height: 28px;
+  width: 33px;
+}
+
+.arduino{
+  width: 150px;
+  height: 100px;
+}
+
+
+@media (min-width: 1200px) {
+  .arduino{
+    width: 353px;
+    height: 202px;
+    
+  }
+}
+
+.bannerzin{
+  background-image: url('../Pasta_Front_do_FIgma_100%/Página 2/—Pngtree—website background image red mystery_1146508.jpg');
+  background-size: cover;      /* faz preencher toda a área */
+  background-position: center; /* centraliza o gradiente */
+  background-repeat: no-repeat;
+  width: 100%;                 /* garante largura total */
+}
+
+
+
+.imagem1{
+  max-width: 200px; 
+  height: auto;
+  border-radius: 8px;
+}
+
+.imagem2{
+  max-width: 200px; 
+  height: auto;
+  border-radius: 8px;
+}
+
+.botao1{
+  border-radius: 16px;
+}
+
+.rolagem{
+  overflow-y: scroll;
+  max-height: 122px;
+}
+
+.footer-banner {
+    width: 100%;
+    height: 100px; /* ajuste como quiser */
+    background-image: url("../Pasta_Front_do_FIgma_100%/página1/4708645-fundo-azul-e-branco-limpo-e-moderno-ondulado-vetor-removebg-preview.png");
+    background-size: cover;       /* preenche toda a largura */
+    /* background-position: center;  */
+    background-position-y: -469px;
+    background-repeat: no-repeat; /* não repete */
+}
+
+
+.textin{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* quantidade de linhas que você quer */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+
+

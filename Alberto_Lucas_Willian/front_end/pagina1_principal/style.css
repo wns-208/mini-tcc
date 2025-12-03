@@ -45,10 +45,24 @@ html, body {
   width: 33px;
 }
 
+<<<<<<< HEAD
 .arduino {
     width: 100%;
     max-width: 350px; /* opcional */
     height: auto;
+=======
+.arduino{
+  width: 150px;
+  height: 100px;
+}
+
+
+@media (min-width: 1200px) {
+  .arduino{
+    width: 350px;
+    height: 200px;
+  }
+>>>>>>> f3f02175b415bda41a937a04ffb7e319f6e9bcf0
 }
 
 
@@ -135,11 +149,23 @@ html, body {
   border-radius: 16px;
 }
 
+.rolagem{
+  overflow-y: scroll;
+  max-height: 122px;
+}
+
+.textin{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* quantidade de linhas que você quer */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 /* Container fixo no rodapé */
 .menu-container {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
+    /* position: fixed; */
+    /* bottom: 25px;
+    right: 25px; */
     width: 80px;
     height: 80px;
     z-index: 2000;
@@ -161,46 +187,81 @@ html, body {
 
 /* Itens escondidos inicialmente */
 .item {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 22px;
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  cursor: pointer;
 
-    transform: translateY(0) rotate(0deg) scale(0);
-    opacity: 0;
+  transform: translateY(0) rotate(0deg) scale(0);
+  opacity: 0;
 
-    transition:
-        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-        opacity 0.3s ease;
+  transition:
+      transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+      opacity 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden; /* garante que imagem não ultrapasse o círculo */
 }
 
-.item1 { background: #ff006a; }
-.item2 { background: #7b2fff; }
-.item3 { background: #ffa400; }
+.item img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.item1 { background: #36BFB1; }
+.item2 { background: #D92525; }
+.item3 { background: #044040; }
+.item4 { background: #014034; }
+.item5 { background: #8C1F28; }
 
 /* Botões animando (subindo + girando + aparecendo) */
 .menu-container.active .item1 {
-    transform: translate(-70px, -10px) rotate(360deg) scale(1);
+    transform: translate(/* alinhamento x */-70px, /* alinhamento y */ 5px) rotate(360deg) scale(1);
     opacity: 1;
 }
 .menu-container.active .item2 {
-    transform: translate(-50px, -80px) rotate(360deg) scale(1);
+    transform: translate(5px, -80px) rotate(360deg) scale(1);
     opacity: 1;
 }
 .menu-container.active .item3 {
-    transform: translate(20px, -70px) rotate(360deg) scale(1);
+    transform: translate(/* alinhamento x */-50px, /* alinhamento y */-55px) rotate(360deg) scale(1);
     opacity: 1;
+}
+
+.menu-container.active .item4 {
+  transform: translate(/* alinhamento x */60px, /* alinhamento y */-55px) rotate(360deg) scale(1);
+  opacity: 1;
+}
+
+.menu-container.active .item5 {
+  transform: translate(/* alinhamento x */70px, /* alinhamento y */5px) rotate(360deg) scale(1);
+  opacity: 1;
 }
 
 /* FAB vira X */
 .menu-container.active .fab {
     transform: rotate(45deg);
 }
+
+.footer-banner {
+    width: 100%;
+    height: 100px; /* ajuste como quiser */
+    background-image: url("../Pasta_Front_do_FIgma_100%/página1/4708645-fundo-azul-e-branco-limpo-e-moderno-ondulado-vetor-removebg-preview.png");
+    background-size: cover;       /* preenche toda a largura */
+    /* background-position: center;  */
+    background-position-y: -469px;
+    background-repeat: no-repeat; /* não repete */
+}
+
+
+
 
 /* @media só de height -> btões */
 
