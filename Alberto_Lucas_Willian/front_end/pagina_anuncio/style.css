@@ -14,6 +14,24 @@ html, body {
   margin:0; 
   padding:0; 
 }
+
+.nav_prin {
+  height: 65px;        /* altura da navbar */
+  display: flex;
+  align-items: center; /* centraliza o conteúdo verticalmente */
+  padding: 0 20px;     /* opcional: aumenta o espaço lateral */
+  font-size: 22px;     /* opcional: aumenta o texto */
+}
+
+
+/* link da conta */
+.conta-btn {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 /* --------------- Página 1 (principal) ----------------------- */
 
  .b_nav{

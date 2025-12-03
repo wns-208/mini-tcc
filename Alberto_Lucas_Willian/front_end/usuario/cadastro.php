@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +11,9 @@
 </head>
 <body>
 
-  <!-- <div class="col-md-6 p-0">
-            <img class="img-esquerda" src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" alt="">
- </div> -->
+    <img src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" class="rounded float-start" alt="...">
+<!-- <img class="img-esquerda" src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" alt="foto do pc"> -->
+
 
 
 <div class="container mt-4 d-flex justify-content-end align-items-center">
@@ -32,7 +29,7 @@
 
         <div class="container">
    
-            <form action="cadastro.php" method="POST">
+            <form action="cadastro.html" method="POST">
                 
             
    
@@ -63,7 +60,11 @@
                 <div class="botao">
                     <div class="row">
                         <div class="col-md-12 mb-3">
-                             <a href="../pagina1_principal/index.html" class="btn btn-primary w-100">Cadastrar</a>
+                            
+                                <a href="../pagina1_principal/index.html" class="btn btn-primary w-100"> Ir para Outra Página</a>
+
+
+                            
                         </div>
                     </div>
                 </div>    
