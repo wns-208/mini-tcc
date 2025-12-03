@@ -21,11 +21,12 @@ html, body {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-}
+ }
 
 
 .jersey{
     font-family: "Jersey 20", sans-serif;
+   
 }
 .reem_kufi{
   font-family: "Reem Kufi", sans-serif;
@@ -44,16 +45,22 @@ html, body {
   width: 33px;
 }
 
-.arduino{
-  width: 350px;
+.arduino {
+    width: 100%;
+    max-width: 350px; /* opcional */
+    height: auto;
 }
+
 
 .bannerzin{
   background-image: url('../Pasta_Front_do_FIgma_100%/página1/13476684-fundo-gradiente-abstrato-de-turquesa-a-agua-marinha-gratis-vetor.jpg');
   background-size: cover;      /* faz preencher toda a área */
   background-position: center; /* centraliza o gradiente */
   background-repeat: no-repeat;
-  width: 100%;                 /* garante largura total */
+  width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 
