@@ -45,12 +45,7 @@ html, body {
   width: 33px;
 }
 
-<<<<<<< HEAD
-.arduino {
-    width: 100%;
-    max-width: 350px; /* opcional */
-    height: auto;
-=======
+
 .arduino{
   width: 150px;
   height: 100px;
@@ -62,7 +57,7 @@ html, body {
     width: 350px;
     height: 200px;
   }
->>>>>>> f3f02175b415bda41a937a04ffb7e319f6e9bcf0
+
 }
 
 
