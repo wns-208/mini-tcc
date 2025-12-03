@@ -8,15 +8,20 @@
   </head>
   <body>
 
-    <label for="inputCategoria">Digite a categoria que deseja</label>
-    <input type="text" name="inputCategoria" id="inputCategoria">
+       <label class="form-label" for="inputCategoria">Categoria</label>
+   <select class="form-select" name="inputCategoria" id="inputCategoria" required>
+            <option value="" selected disabled>Selecione uma categoria</option>
+            <option value="Software">Software</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Misc">Misc</option>
+        </select>
     <button type="submit" onclick="getPostagens()">Enviar</button>
 
     <script>
         let isLoading = false;
         
         function getPostagens(){
-            let categoria_selecionada = document.querySelector("#inputCategoria")
+            let categoria_selecionada = document.querySelector("#inputCategoria").value
             let postagem = { postagem_categoria: `${categoria_selecionada}` };
                 isLoading = true;
 

@@ -18,7 +18,7 @@ $id_usuario = $_SESSION["id"];
 <div claas="card shadow-sm p-4">
  <h3 class="mb-4">Crie uma Postagem</h3>   
 
-<form action="postagem.php" method="POST" enctype="multipart/form-data">
+<form action="editarPostagem.php" method="POST" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-6 mb-3">
     <label for="postagem_titulo">Titulo da postagem</label>
@@ -40,13 +40,25 @@ $id_usuario = $_SESSION["id"];
    </div>
    </div>
 
+   <div class="row">
+    <div class="col-md-6 mb-3">
+   <label class="form-label" for="postagem_id">ID da postagem que deseja editar</label>
+   <input class="form-control" type="number" name="postagem_id" id="postagem_id" autocomplete="off" required>
+   </div>
+   </div>
+
    <div class="col-md-6 mb-3">
    <label class="form-label" for="postagem_categoria">Categoria</label>
-   <input class="form-control" type="text" name="postagem_categoria" id="postagem_categoria" autocomplete="off" required>
+   <select class="form-select" name="postagem_categoria" id="postagem_categoria" required>
+            <option value="" selected disabled>Selecione uma categoria</option>
+            <option value="Software">Software</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Misc">Misc</option>
+        </select>
     </div>
     </div>
 
-   <button class="btn btn-primary w-100" type="submit" name="enviar">Cadastrar</button>
+   <button class="btn btn-primary w-100" type="submit" name="enviar">Editar Postagem</button>
 </form>
 </div>
 </div>
@@ -65,9 +77,10 @@ $validacao = explode(".", basename($arquivo_selecionado));
 $postagem_titulo = isset($_POST['postagem_titulo']) ? $_POST['postagem_titulo'] : exit();
 $postagem_conteudo = isset($_POST['postagem_conteudo']) ? $_POST['postagem_conteudo'] : exit();
 $postagem_categoria = isset($_POST['postagem_categoria']) ? $_POST['postagem_categoria'] : exit();
+$postagem_id = isset($_POST['postagem_id']) ? $_POST['postagem_id'] : exit();
 
-$insert_postagem = $connection->prepare("INSERT INTO postagem (postagem_titulo, postagem_conteudo, postagem_categoria, postagem_id_usuario) VALUES (?, ?, ?, ?)");
-$insert_postagem->bind_param("sssi", $postagem_titulo, $postagem_conteudo, $postagem_categoria, $id_usuario);
+$insert_postagem = $connection->prepare("UPDATE postagem SET postagem_titulo = ?, postagem_conteudo = ?, postagem_categoria = ? , postagem_id = ?");
+$insert_postagem->bind_param("sssi", $postagem_titulo, $postagem_conteudo, $postagem_categoria, $id_postagem);
 $insert_postagem->execute();
 $ultimo_id = mysqli_insert_id($connection);
 
@@ -84,7 +97,3 @@ $ultimo_id = mysqli_insert_id($connection);
         }
     }
 ?>
-
-
-
-NÃO TERMINADO

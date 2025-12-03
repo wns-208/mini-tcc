@@ -42,7 +42,12 @@ $id_usuario = $_SESSION["id"];
 
    <div class="col-md-6 mb-3">
    <label class="form-label" for="postagem_categoria">Categoria</label>
-   <input class="form-control" type="text" name="postagem_categoria" id="postagem_categoria" autocomplete="off" required>
+   <select class="form-select" name="postagem_categoria" id="postagem_categoria" required>
+            <option value="" selected disabled>Selecione uma categoria</option>
+            <option value="Software">Software</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Misc">Misc</option>
+        </select>
     </div>
     </div>
 
