@@ -262,6 +262,13 @@ html, body {
 
 /* Extra small: col- (0px+) — não precisa de media query */
 
+@media (max-width: 576px) {
+  .arduino{
+    width: 150px;
+    height: 100px;
+  }
+}
+
 /* Small — col-sm- */
 @media (min-width: 576px) {
   .botao1{

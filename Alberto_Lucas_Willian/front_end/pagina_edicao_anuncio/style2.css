@@ -52,3 +52,8 @@ background: #0028a1;
 .imagem_daora{
     margin-top: 80px;
 }
+
+.categoria{
+    height: 33px;
+    border-radius: 8px;
+}
