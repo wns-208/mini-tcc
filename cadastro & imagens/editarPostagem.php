@@ -1,13 +1,14 @@
 <?php
 include "../Alberto_Lucas_Willian/back_end/conexao.php";
 session_start();
+$id_usuario = $_SESSION["id"];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Postagem</title>
+    <title>Criar Postagem</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -15,7 +16,7 @@ session_start();
 
 <div class="container mt-4">
 <div claas="card shadow-sm p-4">
- <h3 class="mb-4">Edite uma Postagem</h3>   
+ <h3 class="mb-4">Crie uma Postagem</h3>   
 
 <form action="editarPostagem.php" method="POST" enctype="multipart/form-data">
     <div class="row">
@@ -78,7 +79,7 @@ $postagem_conteudo = isset($_POST['postagem_conteudo']) ? $_POST['postagem_conte
 $postagem_categoria = isset($_POST['postagem_categoria']) ? $_POST['postagem_categoria'] : exit();
 $postagem_id = isset($_POST['postagem_id']) ? $_POST['postagem_id'] : exit();
 
-$insert_postagem = $connection->prepare("UPDATE postagem SET postagem_titulo = ?, postagem_conteudo = ?, postagem_categoria = ? WHERE postagem_id = ?");
+$insert_postagem = $connection->prepare("UPDATE postagem SET postagem_titulo = ?, postagem_conteudo = ?, postagem_categoria = ? , postagem_id = ?");
 $insert_postagem->bind_param("sssi", $postagem_titulo, $postagem_conteudo, $postagem_categoria, $id_postagem);
 $insert_postagem->execute();
 $ultimo_id = mysqli_insert_id($connection);

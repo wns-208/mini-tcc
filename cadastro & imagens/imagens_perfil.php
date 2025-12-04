@@ -43,11 +43,3 @@ else{
     exit();
 }
 ?>
-
-<!-- O que "htmlspecialchars", "basename", "move_uploaded_file()", "UPLOAD_ERR_OK", "explode() e $FILES faz?"?
-htmlspecialchars = Diz para o PHP que qualquer caractere special como "&" serve como uma STRING, isso previne possivel conflitos.
-basename = Em um arquivo nos temos algum parecido como "C:/PASTA1/PASTA2/PASTA3/ARQUIVO" o basename vai remover as partes que não "interessa" ou seja remove todo o caminho MENOS o "ARQUIVO".
-move_uploaded_file() = Em nosso computador nos temos uma pasta chamada de "temp", como o proprio nome ja diz, ela é uma pasta TEMPORARIA. Com isso o move_uploaded_file() pega QUALQUER ARQUIVO novo dentro da pasta "temp" e leva ele para uma pasta determinada.
-UPLOAD_ERR_OK = É um "check" do PHP que verifica se o upload deu certo ou não.
-explode() = Imagine isso como um "Splice" do PHP, ele fragmenta o conteudo até um determinado ponto, esses novos fragmentos são guardados a partir de arrays.
-$FILES = É uma superglobal que permite o PHP gerenciar qualquer arquivo novo. -->
