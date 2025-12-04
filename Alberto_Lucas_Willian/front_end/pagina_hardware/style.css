@@ -39,7 +39,20 @@ html, body {
     box-shadow: none !important;
 }
 
+.btn-saiba {
+  background: #d40000;
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  align-self: flex-end;
+  transition: 0.2s;
+}
 
+.btn-saiba:hover {
+  background: #a10000;
+}
 
 
 .jersey{

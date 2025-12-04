@@ -282,7 +282,7 @@ html, body {
 
 .rolagem{
   overflow-y: scroll;
-  max-height: 150px;
+  max-height: 200px;
 }
 
 .rolagem::-webkit-scrollbar {
