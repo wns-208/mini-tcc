@@ -1,3 +1,7 @@
+<?php
+include "../Alberto_Lucas_Willian/back_end/conexao.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,60 +16,59 @@
 <body>
 
     <img src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" class="rounded float-start" alt="...">
-<!-- <img class="img-esquerda" src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" alt="foto do pc"> -->
 
 
 <div class="container mt-4 d-flex justify-content-end align-items-center">
-
-<!-- <div class="row">
-    <div class="teste">
-        <div class="col-6"></div>
-    </div>
-</div> -->
     <div class="formulario">
-     
-   
-
         <div class="container">
    
-           
-             <form action="cadastro.html" method="POST">   
-            
-   
-
-
+             <form action="cadastro.php" method="POST">   
                     <div class="row">
                         <div class="col-md-12 mb-3">
-                            <label class="form-label" for="nome">Nome do Usuario</label>
-                            <input class="form-control" type="text" name="nome" id="nome" autocomplete="on" required>
+                            <label class="form-label" for="usuario_nome">Nome do Usuario</label>
+                            <input class="form-control" type="text" name="usuario_nome" id="usuario_nome" autocomplete="off" required>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12 mb-3">
-                            <label class="form-label" for="email">Email</label>
-                            <input class="form-control" type="email" name="email" id="email" autocomplete="on" required">
+                            <label class="form-label" for="usuario_email">E-mail</label>
+                            <input class="form-control" type="email" name="usuario_email" id="usuario_email" autocomplete="off" required>
                         </div>
                     </div>
 
                     <div class="col-md-12 mb-3">
-                        <label class="form-label" for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" autocomplete="on" required">
+                        <label class="form-label" for="usuario_senha">Senha</label>
+                        <input class="form-control" type="password" name="usuario_senha" id="usuario_senha" autocomplete="off" required>
                     </div>
                     
-                    <p>ja tem uma conta? <a href="login.html">entrar</a></p>
-                    
+                    <p>Ja tem uma conta? <a href="login.html">Entrar</a></p>
 
-                <div class="botao">
-                    <div class="row">
-                       
-                    </div>
                 </div>    
                 </form>
             </div>    
-                                    <a href="../pagina1_principal/index.html" class="btn btn-primary w-100"> acessar</a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php
+$usuario_nome = isset($_POST['usuario_nome']) ? $_POST['usuario_nome'] : exit();
+$usuario_email = isset($_POST['usuario_email']) ? $_POST['usuario_email'] : exit();
+$usuario_senha = isset($_POST['usuario_senha']) ? $_POST['usuario_senha'] : exit();
+
+$insert_usuario = $connection->prepare("INSERT INTO usuario (usuario_nome, usuario_email, usuario_senha) VALUES (?, ?, ?)");
+$insert_usuario->bind_param("sss", $usuario_nome, $usuario_email, $usuario_senha);
+
+
+if ($insert_usuario->execute()) {
+    $ultimo_id = mysqli_insert_id($connection);
+    $_SESSION["id"] = $ultimo_id;
+    header("location: ../pagina1_principal/index.html");
+} else {
+    echo "Erro: " . $insert_usuario->error;
+}
+
+$_SESSION["id"] = $ultimo_id;
+?>

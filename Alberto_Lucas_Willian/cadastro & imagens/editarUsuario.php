@@ -61,6 +61,4 @@ if ($update->execute()) {
 } else {
     echo "Erro: " . $update->error;
 }
-
-$_SESSION["id"] = $ultimo_id;
 ?>
