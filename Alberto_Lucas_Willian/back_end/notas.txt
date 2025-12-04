@@ -1,5 +1,0 @@
-O que precisa ser feito BACKEND
-- Edição de usuarios
-- Criação de postagens
-        ^^^^
-Conexão ao banco de dados (INSERT E UPDATE)
