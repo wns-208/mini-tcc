@@ -52,7 +52,7 @@
                     col.classList.add('col-12');
 
                     let p = document.createElement('p');
-                    p.innerText = 'ID: ' + postagem.postagem_id + ' Título: ' + postagem.postagem_titulo + ' - Feito por: ' + postagem.postagem_id_usuario + ' - Criado em: ' + postagem.postagem_data_criacao + ' - Conteudo: ' + postagem.postagem_conteudo + ' - Categoria: ' + postagem.postagem_categoria
+                    p.innerText = 'ID: ' + postagem.postagem_id + ' - Título: ' + postagem.postagem_titulo + ' - Feito por: ' + postagem.postagem_id_usuario + ' - Criado em: ' + postagem.postagem_data_criacao + ' - Conteudo: ' + postagem.postagem_conteudo + ' - Categoria: ' + postagem.postagem_categoria
                     if (postagem.postagem_imagem != 'SEM_IMAGEM.jpeg') {
                         let img = document.createElement('img');
                         img.src = local_arquivo + postagem.postagem_imagem;

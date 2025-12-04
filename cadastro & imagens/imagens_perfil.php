@@ -11,7 +11,7 @@ $id_usuario = $_SESSION["id"];
 </form>
 
 <?php
-$pasta_final = "C:/xampp/htdocs/mini-tcc/Alberto_Lucas_Willian/front_end/usuarios/assests/perfil/";
+$pasta_final = "../Alberto_Lucas_Willian/front_end/usuarios/assests/perfil/";
 $arquivo_selecionado = $pasta_final.basename($_FILES["foto"]["name"]);
 $arquivo_filtrado = basename($arquivo_selecionado);
 $validacao = explode(".", basename($arquivo_selecionado));
