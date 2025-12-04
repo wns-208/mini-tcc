@@ -49,4 +49,9 @@
      })
  }
 
- 
+ getUsuarios(); // Buscar Dados
+
+ function entrarNapagina(){
+    window.location.href = "../pagina_hardware/index.html";
+
+ }
