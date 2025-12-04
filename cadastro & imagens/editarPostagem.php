@@ -79,7 +79,7 @@ $postagem_conteudo = isset($_POST['postagem_conteudo']) ? $_POST['postagem_conte
 $postagem_categoria = isset($_POST['postagem_categoria']) ? $_POST['postagem_categoria'] : exit();
 $postagem_id = isset($_POST['postagem_id']) ? $_POST['postagem_id'] : exit();
 
-$insert_postagem = $connection->prepare("UPDATE postagem SET postagem_titulo = ?, postagem_conteudo = ?, postagem_categoria = ? , postagem_id = ?");
+$insert_postagem = $connection->prepare("UPDATE postagem SET postagem_titulo = ?, postagem_conteudo = ?, postagem_categoria = ? WHERE postagem_id = ?");
 $insert_postagem->bind_param("sssi", $postagem_titulo, $postagem_conteudo, $postagem_categoria, $id_postagem);
 $insert_postagem->execute();
 $ultimo_id = mysqli_insert_id($connection);
