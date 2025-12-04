@@ -52,6 +52,9 @@ html, body {
 }
 .titulo_banner{
    font-family: "Jersey 20", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    white-space: nowrap;
    color: #FFFFFF;
 }
 
@@ -78,6 +81,22 @@ html, body {
   }
 
 }
+
+@media (min-width: 768px) {
+  .imagem2:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  }
+}
+
+/* Clique / toque no mobile */
+@media (max-width: 768px) {
+  .imagem2:active {
+    transform: scale(0.96);
+    filter: brightness(1.2);
+  }
+}
+
 
 
 .bannerzin{
@@ -120,43 +139,141 @@ html, body {
 
 /* hover btn */
 
-.hardwares:hover{
+ .botao1{
+    height: 76px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .botao1 span{
+        position: relative;
+    z-index: 1;
+  }
+
+  .botao1:hover::before{
+    filter: blur(2px); /* intensidade do blur */
+}
+
+.btn-saiba {
+  background: #d40000;
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  align-self: flex-end;
+  transition: 0.2s;
+}
+
+.btn-saiba:hover {
+  background: #a10000;
+}
+
+  .botao1:hover{
   background-image: url('../Pasta_Front_do_FIgma_100%/página1/download.webp');
   background-position-x: center;
   background-position-y: center;
+  background-size: 100%;
   color: #FFFFFF;
 }
 
 .appm:hover{
   background-image: url('../Pasta_Front_do_FIgma_100%/página1/5-6.webp');
-  color: #FFFFFF;
+  color: black;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
 }
 
 .site:hover{
   background-image: url('../Pasta_Front_do_FIgma_100%/página1/modelo-de-design-de-site-de-interface-do-usuario_23-2149182791.png');
   color: #FFFFFF;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
 }
 
 .softwares:hover{
   background-image: url('../Pasta_Front_do_FIgma_100%/página1/Mockflow.webp');
-  color: #FFFFFF;
+  color: black;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
 }
 
 .arduinos:hover{
   background-image: url('../Pasta_Front_do_FIgma_100%/página1/o-que-e-arduino.jpg');
   color: #FFFFFF;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
 }
 
-.imagem1{
-  max-width: 200px; 
-  height: auto;
-  border-radius: 8px;
+.imagem1 {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  /* border: 2px solid #0F38A2; */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.imagem2{
-  max-width: 200px; 
-  height: auto;
-  border-radius: 8px;
+
+.imagem2 {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: 0.3s ease;
+  /* border: 2px solid #0F38A2; */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.imagem-link:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+.carousel-mobile {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+
+  /* remove scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cada card do carrossel */
+.item-mobile {
+  min-width: 85%;
+  scroll-snap-align: center;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 16px;
+  border: 2px solid #0F38A2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+/* animação ao toque */
+.item-mobile:active {
+  transform: scale(0.98);
+}
+
+
+/* imagem dentro do carrossel */
+.item-mobile img {
+  width: 100%;
+  border-radius: 14px;
+  border: 2px solid #0F38A2;
+  margin-bottom: 10px;
 }
 
 .botao1{
@@ -165,7 +282,16 @@ html, body {
 
 .rolagem{
   overflow-y: scroll;
-  max-height: 122px;
+  max-height: 150px;
+}
+
+.rolagem::-webkit-scrollbar {
+  width: 7px;
+}
+
+.rolagem::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
 }
 
 .textin{
@@ -174,6 +300,40 @@ html, body {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+@media (min-width: 768px){
+  .artigos-desktop { display: block; }
+.artigos-mobile { display: none; }
+}
+
+
+@media (max-width: 767px) {
+  .artigos-desktop { display: none; }
+  .artigos-mobile { display: block; }
+}
+
+
+.data-artigo {
+  color: #0F38A2;
+  font-weight: bold;
+}
+
+.botao-saiba-mais {
+  padding: 3px 10px !important;
+  font-size: 0.8rem;
+  background: #D92525;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  float: right;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.botao-saiba-mais:hover {
+  background: #b11f1f;
+}
+
 
 /* Container fixo no rodapé */
 .menu-container {
@@ -266,7 +426,7 @@ html, body {
 
 .footer-banner {
     width: 100%;
-    height: 100px; /* ajuste como quiser */
+    height: 100px; 
     background-image: url("../Pasta_Front_do_FIgma_100%/página1/4708645-fundo-azul-e-branco-limpo-e-moderno-ondulado-vetor-removebg-preview.png");
     background-size: cover;       /* preenche toda a largura */
     /* background-position: center;  */
@@ -283,102 +443,72 @@ html, body {
 
 @media (max-width: 576px) {
   .arduino{
-    width: 150px;
-    height: 100px;
+    width: 121.5px;
+    height: 81px;
   }
+      .titulo_banner {
+        font-size: 0.75rem;    /* texto menor */
+        white-space: nowrap;   /* evita quebra */
+    }
+
+    .row-banner {
+        flex-wrap: nowrap;      /* impede que a imagem pule para baixo */
+    }
 }
 
 /* Small — col-sm- */
 @media (min-width: 576px) {
-  .botao1{
-
-  }
+        .titulo_banner {
+        font-size: 0.95rem;    /* texto menor */
+        white-space: nowrap;   /* evita quebra */
+    }
 }
 
 /* Medium — col-md- */
 @media (min-width: 768px) {
-    .botao1{
-    
+        .titulo_banner {
+        font-size: 1.5rem;    /* texto menor */
+        white-space: nowrap;   /* evita quebra */
+    }
+     .botao1{
+    height: 66px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
   }
 }
 
 /* Large — col-lg- */
 @media (min-width: 992px) {
-    .botao1{
-    
-  }
+        .titulo_banner {
+        font-size: 1.5rem;    /* texto menor */
+        white-space: nowrap;   /* evita quebra */
+    }
+ 
 }
 
 /* Extra large — col-xl- */
 @media (min-width: 1200px) {
-    .botao1{
-    
-  }
+        .titulo_banner {
+        font-size: 2.0rem;    /* texto menor */
+        white-space: nowrap;   /* evita quebra */
+    }
+
 }
 
 /* Extra extra large — col-xxl- */
 @media (min-width: 1400px) {
-    .botao1{
-    height: 76px;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    cursor: pointer;
-  }
 
-  .botao1 span{
-        position: relative;
-    z-index: 1;
-  }
-
-  .botao1:hover::before{
-    filter: blur(2px); /* intensidade do blur */
-}
-
-  .botao1:hover{
-  background-image: url('../Pasta_Front_do_FIgma_100%/página1/download.webp');
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 100%;
-  color: #FFFFFF;
-}
-
-.appm:hover{
-  background-image: url('../Pasta_Front_do_FIgma_100%/página1/5-6.webp');
-  color: black;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 100%;
-}
-
-.site:hover{
-  background-image: url('../Pasta_Front_do_FIgma_100%/página1/modelo-de-design-de-site-de-interface-do-usuario_23-2149182791.png');
-  color: #FFFFFF;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 100%;
-}
-
-.softwares:hover{
-  background-image: url('../Pasta_Front_do_FIgma_100%/página1/Mockflow.webp');
-  color: black;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 100%;
-}
-
-.arduinos:hover{
-  background-image: url('../Pasta_Front_do_FIgma_100%/página1/o-que-e-arduino.jpg');
-  color: #FFFFFF;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 100%;
-}
+        .titulo_banner {
+        font-size: 2.5rem;    /* texto menor */
+        white-space: nowrap;   /* evita quebra */
+    }
 }
 
 
 
 /* Garante que os botões grandes somem em XS e SM */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .botao1 {
         display: none !important;
     }
