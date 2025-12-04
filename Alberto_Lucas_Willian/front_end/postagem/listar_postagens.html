@@ -30,7 +30,7 @@
             .then(response => response.json())
             .then(response => {
 
-                response.postagem.forEach(postagem => {
+                response.postagens.forEach(postagem => {
                     // montando o visual da lista
                     let row = document.createElement('div');
                     row.classList.add('row');
@@ -45,9 +45,9 @@
                     if (postagem.postagem_imagem != "SEM_IMAGEM.jpeg") {
                         let img = document.createElement('img');
                         img.src = local_arquivo + postagem.imagem;
+                        col.appendChild(img);
                     }
                     col.appendChild(p);
-                    col.appendChild(img);
                     row.appendChild(col);
                     lista.appendChild(row);
                 });

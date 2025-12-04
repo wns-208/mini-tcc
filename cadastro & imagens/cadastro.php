@@ -28,7 +28,7 @@ session_start();
    <div class="row">
     <div class="col-md-6 mb-3">
    <label class="form-label" for="usuario_email">E-mail</label>
-   <input class="form-control" type="" name="usuario_email" id="usuario_email" autocomplete="off" required>
+   <input class="form-control" type="email" name="usuario_email" id="usuario_email" autocomplete="off" required>
    </div>
    </div>
 
