@@ -14,9 +14,7 @@
 </head>
 <body>
 
-  <!-- <div class="col-md-6 p-0">
-            <img class="img-esquerda" src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" alt="">
- </div> -->
+
 
 
 <div class="container mt-4 d-flex justify-content-end align-items-center">
@@ -62,9 +60,7 @@
 
                 <div class="botao">
                     <div class="row">
-                        <div class="col-md-12 mb-3">
-                             <a href="../pagina1_principal/index.html" class="btn btn-primary w-100">Cadastrar</a>
-                        </div>
+                       
                     </div>
                 </div>    
                 </form>
