@@ -18,7 +18,7 @@
     <div class="formulario">
          
         <div class="container">
-            <form action="cadastro.php" method="POST">
+            <form action="login.php" method="POST">
                 <!-- <div class="row">
                     <div class="col-md-12 mb-3">
                         <label class="form-label" for="nome">Nome do Usuario</label>

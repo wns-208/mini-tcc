@@ -58,7 +58,7 @@
         <hr>
 
         <!-- FORMULÁRIO -->
-        <form>
+            <form action="editar_perfil.php" method="post">
             <div class="row g-4">
 
                 <!-- Nome -->
