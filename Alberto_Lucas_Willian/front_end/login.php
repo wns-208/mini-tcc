@@ -29,16 +29,16 @@
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label class="form-label" for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email autocomplete="on" required">
+                        <input class="form-control" type="email" name="email" id="email" autocomplete="off" required">
                     </div>
                 </div>
 
                 <div class="col-md-12 mb-3">
                     <label class="form-label" for="senha">Senha</label>
-                    <input class="form-control" type="password" name="senha" id="senha autocomplete="on" required">
+                    <input class="form-control" type="password" name="senha" id="senha" autocomplete="off" required">
                 </div>
                 
-                <p>não tem uma conta? <a href="cadastro.php">cadastrar</a></p>
+                <p>Não tem uma conta? <a href="cadastro.php">Cadastrar</a></p>
                 
 
             <div class="botao">

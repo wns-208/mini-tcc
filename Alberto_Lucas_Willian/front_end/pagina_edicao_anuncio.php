@@ -20,14 +20,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 
     <!-- CSS do style -->
-    <link rel="stylesheet" href="pagina_edicacao_anuncio.css">
+    <link rel="stylesheet" href="pagina_edicacao_anuncio.css" enctype="multipart/form-data">
   </head>
- 
   <body>
-
+<form action="pagina_edicao_anuncio" method="post"> 
 <div class="container card-container">
-
-
 <div class="row imagem_daora justify-content-center">
 <div class="col-7 col-md-8 text-center justify-content-center align-items-center">
 <img src="Pasta_Front_do_FIgma_100%/Página 2/674435.jpg" class="preview-img" alt="Preview">
@@ -41,15 +38,8 @@
 <input type="text" class="form-control" placeholder="Digite o título...">
 </div>
 
-
 <div class="col-md-6">
-<label class="fw-bold">Data de publicação:</label>
-<input type="date" class="form-control">
-</div>
-
-
-<div class="col-md-6">
-<label class="fw-bold">Foto (arquivo):</label>
+<label class="fw-bold">Foto (Opicional):</label>
 <input type="file" class="form-control">
 </div>
 
@@ -62,11 +52,10 @@
 
 
 <select name="categoria" class="col-md-6 categoria">
-  <option value="arduino" class="form-control">Arduino</option>
-  <option value="software" class="form-control">Software</option>
-  <option value="software" class="form-control">Hardware</option>
-  <option value="software" class="form-control">Aplicativos Mobile</option>
-  <option value="software" class="form-control">Software</option>
+                <option value="Arduino" class="form-control">Arduino</option>
+                <option value="Software" class="form-control">Software</option>
+                <option value="Hardware" class="form-control">Hardware</option>
+                <option value="Aplicativos Mobile" class="form-control">Aplicativos Mobile</option>
 </select>
 
 
@@ -81,8 +70,6 @@
 </div>
 </div>
 </div>
-
-
-    
+</form>
 </body>
 </html>

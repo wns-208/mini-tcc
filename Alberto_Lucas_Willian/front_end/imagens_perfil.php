@@ -4,6 +4,7 @@ session_start();
 $id_usuario = $_SESSION["id"];
 ?>
 
+<h1>Customize sua foto de perfil aqui!</h1>
 <form action="imagens_perfil.php" method="post" enctype="multipart/form-data"> <!-- Lembre-se de colocar o enctype correto, é precisso para realizar o upload de arquivos -->
     <label for="foto">Selecione uma foto para servir como foto de perfil:</label>
     <input type="file" name="foto" id="foto">

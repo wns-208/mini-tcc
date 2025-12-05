@@ -1,10 +1,6 @@
 <?php
-<<<<<<< HEAD
 include "../Alberto_Lucas_Willian/back_end/conexao.php";
 session_start();
-=======
-
->>>>>>> 3124199ba670b447e3f9d387b50b98c63830140c
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,29 +14,12 @@ session_start();
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-
-<<<<<<< HEAD
     <img src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" class="rounded float-start" alt="...">
-=======
-<!-- <img class="img-esquerda" src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" alt="foto do pc"> -->
->>>>>>> 3124199ba670b447e3f9d387b50b98c63830140c
-
-
-
 <div class="container mt-4 d-flex justify-content-end align-items-center">
     <div class="formulario">
         <div class="container">
    
-<<<<<<< HEAD
              <form action="cadastro.php" method="POST">   
-=======
-            <form action="cadastro.html" method="POST">
-                
-            
-   
-
-
->>>>>>> 3124199ba670b447e3f9d387b50b98c63830140c
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="usuario_nome">Nome do Usuario</label>
@@ -62,26 +41,9 @@ session_start();
                     
                     <p>Ja tem uma conta? <a href="login.html">Entrar</a></p>
 
-<<<<<<< HEAD
                 </div>    
                 </form>
             </div>    
-=======
-                <div class="botao">
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            
-                                <a href="../pagina1_principal/index.html" class="btn btn-primary w-100"> Ir para Outra Página</a>
-
-
-                            
-                        </div>
-                    </div>
-                </div>    
-                </form>
-            </div>    
-    
->>>>>>> 3124199ba670b447e3f9d387b50b98c63830140c
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -100,7 +62,7 @@ $insert_usuario->bind_param("sss", $usuario_nome, $usuario_email, $usuario_senha
 if ($insert_usuario->execute()) {
     $ultimo_id = mysqli_insert_id($connection);
     $_SESSION["id"] = $ultimo_id;
-    header("location: ../pagina1_principal/index.html");
+    header("location: ./pagina1_principal/index.html");
 } else {
     echo "Erro: " . $insert_usuario->error;
 }
