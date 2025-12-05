@@ -9,7 +9,7 @@
     <title>Login</title>
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="usuario.css">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
             <div class="botao">
                 <div class="row">
                     <div class="col-md-12 mb-3">
-                        <a href="../pagina1_principal/index.html" class="btn btn-primary w-100">Entrar</a>
+                        <a href="pagina1_principal.html" class="btn btn-primary w-100">Entrar</a>
                     </div>
                 </div>
             </div>    
