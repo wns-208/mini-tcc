@@ -1,0 +1,51 @@
+        body {
+            background: linear-gradient(to bottom, #b8e0f7, #d8efff);
+            min-height: 100vh;
+
+            /* Centralizar vertical e horizontal */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-box {
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        /* FOTO CIRCULAR */
+        .foto-perfil {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .label-form {
+            font-weight: 600;
+        }
+
+        .input-custom {
+            background: #e7dfdf;
+            border: none !important;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .btn-enviar {
+            background: #0019B4;
+            color: white;
+            padding: 7px 25px;
+            border-radius: 10px;
+            border: none;
+            transition: 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background: #00118a;
+        }
