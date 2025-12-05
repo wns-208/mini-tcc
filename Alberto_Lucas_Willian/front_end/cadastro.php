@@ -39,7 +39,7 @@ session_start();
                         <input class="form-control" type="password" name="usuario_senha" id="usuario_senha" autocomplete="off" required>
                     </div>
                     
-                    <p>Ja tem uma conta? <a href="login.html">Entrar</a></p>
+                    <p>Ja tem uma conta? <a href="login.php">Entrar</a></p>
 
                 </div>
             <div class="col-12 text-center mt-3">
