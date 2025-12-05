@@ -1,3 +1,9 @@
+<?php
+    // Iniciar a sessão
+    session_start();
+    include "../Alberto_Lucas_Willian/back_end/conexao.php";
+    $id_usuario = $_SESSION["id"];
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -57,38 +63,27 @@
 
                 <!-- Nome -->
                 <div class="col-md-6">
-                    <label class="label-form">Nome:</label>
-                    <input type="text" class="form-control input-custom">
-                </div>
-
-                <!-- País -->
-                <div class="col-md-6">
-                    <label class="label-form">País de origem:</label>
-                    <input type="text" class="form-control input-custom">
-                </div>
-
-                <!-- Gênero -->
-                <div class="col-md-6">
-                    <label class="label-form">Gênero:</label>
-                    <input type="text" class="form-control input-custom">
-                </div>
-
-                <!-- Descrição -->
-                <div class="col-md-6">
-                    <label class="label-form">Descrição do perfil:</label>
-                    <textarea class="form-control input-custom" rows="2"></textarea>
+                    <label class="label-form" for="usuario_nome">Nome:</label>
+                    <input type="text" name="usuario_nome" id="usuario_nome" class="form-control input-custom" required autocomplete="off">
                 </div>
 
                 <!-- Email -->
                 <div class="col-md-6">
-                    <label class="label-form">Email:</label>
-                    <input type="email" class="form-control input-custom">
+                    <label class="label-form" for="usuario_email">Email:</label>
+                    <input type="email" id="usuario_email" name="usuario_email" class="form-control input-custom" required autocomplete="off">
+                </div>
+            </div>
+
+                <!-- Senha -->
+                <div class="col-md-6">
+                    <label class="label-form" for="usuario_senha">Senha:</label>
+                    <input type="password" id="usuario_senha" name="usuario_senha" class="form-control input-custom" required autocomplete="off">
                 </div>
             </div>
 
             <!-- BOTÃO ENVIAR -->
             <div class="text-end mt-4">
-                <button type="submit" class="btn-enviar">Enviar</button>
+                <button type="submit" class="btn-enviar">Atualizar</button>
             </div>
         </form>
 
@@ -96,3 +91,17 @@
 
 </body>
 </html>
+
+<?php
+$usuario_nome = isset($_POST['usuario_nome']) ? $_POST['usuario_nome'] : exit();
+$usuario_email = isset($_POST['usuario_email']) ? $_POST['usuario_email'] : exit();
+$usuario_senha = isset($_POST['usuario_senha']) ? $_POST['usuario_senha'] : exit();
+
+$update = $connection->prepare("UPDATE usuario SET usuario_nome = ?, usuario_senha = ?, usuario_email = ? WHERE usuario_id = ?");
+$update->bind_param("sssi", $usuario_nome, $usuario_email, $usuario_senha, $id_usuario);
+if ($update->execute()) {
+    header("location: ./imagens_perfil.html");
+} else {
+    echo "Erro: " . $update->error;
+}
+?>

@@ -29,13 +29,13 @@
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label class="form-label" for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email" autocomplete="off" required">
+                        <input class="form-control" type="email" name="email" id="email" autocomplete="off" required>
                     </div>
                 </div>
 
                 <div class="col-md-12 mb-3">
                     <label class="form-label" for="senha">Senha</label>
-                    <input class="form-control" type="password" name="senha" id="senha" autocomplete="off" required">
+                    <input class="form-control" type="password" name="senha" id="senha" autocomplete="off" required>
                 </div>
                 
                 <p>Não tem uma conta? <a href="cadastro.php">Cadastrar</a></p>

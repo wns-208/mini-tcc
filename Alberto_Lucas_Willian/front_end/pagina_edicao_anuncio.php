@@ -1,3 +1,10 @@
+<?php
+    // Iniciar a sessão
+    session_start();
+    include "../Alberto_Lucas_Willian/back_end/conexao.php";
+    $id_usuario = $_SESSION["id"];
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -34,8 +41,8 @@
 
 <div class="row g-4">
 <div class="col-md-6">
-<label class="fw-bold">Título:</label>
-<input type="text" class="form-control" placeholder="Digite o título...">
+<label class="fw-bold" for="postagem_titulo">Título:</label>
+<input type="text" class="form-control" placeholder="Digite o título..." id="postagem_titulo" name="postagem_titulo" required autocomplete="off">
 </div>
 
 <div class="col-md-6">
@@ -43,15 +50,8 @@
 <input type="file" class="form-control">
 </div>
 
-
-<div class="col-md-6">
-<label class="fw-bold">Email de quem escreveu:</label>
-<input type="email" class="form-control" placeholder="email@example.com">
-</div>
-
-
-
-<select name="categoria" class="col-md-6 categoria">
+<label class="fw-bold" for="postagem_categoria">Categoria:</label>
+<select name="postagem_categoria" id="postagem_categoria" class="col-md-6 categoria" required>
                 <option value="Arduino" class="form-control">Arduino</option>
                 <option value="Software" class="form-control">Software</option>
                 <option value="Hardware" class="form-control">Hardware</option>
@@ -60,16 +60,46 @@
 
 
 <div class="col-12">
-<label class="fw-bold">Conteúdo:</label>
-<textarea class="form-control" rows="6" placeholder="Digite o conteúdo..."></textarea>
+<label class="fw-bold" for="postagem_conteudo">Conteúdo:</label>
+<textarea class="form-control" rows="6" id="postagem_conteudo" name="postagem_conteudo" placeholder="Digite o conteúdo..." required autocomplete="off"></textarea>
 </div>
 
 
 <div class="col-12 text-center mt-3">
-<button class="btn btn-custom">Enviar</button>
+<button class="btn btn-custom">Editar</button>
 </div>
 </div>
 </div>
 </form>
 </body>
 </html>
+
+<?php
+$pasta_final = "../Alberto_Lucas_Willian/front_end/postagem/assests/postagem_imagem/";
+$arquivo_selecionado = $pasta_final.basename($_FILES["postagem_imagem"]["name"]);
+$arquivo_filtrado = basename($arquivo_selecionado);
+$validacao = explode(".", basename($arquivo_selecionado));
+
+$postagem_titulo = isset($_POST['postagem_titulo']) ? $_POST['postagem_titulo'] : exit();
+$postagem_conteudo = isset($_POST['postagem_conteudo']) ? $_POST['postagem_conteudo'] : exit();
+$postagem_categoria = isset($_POST['postagem_categoria']) ? $_POST['postagem_categoria'] : exit();
+$postagem_id = isset($_POST['postagem_id']) ? $_POST['postagem_id'] : exit();
+
+$insert_postagem = $connection->prepare("UPDATE postagem SET postagem_titulo = ?, postagem_conteudo = ?, postagem_categoria = ? , postagem_id = ?");
+$insert_postagem->bind_param("sssi", $postagem_titulo, $postagem_conteudo, $postagem_categoria, $id_postagem);
+$insert_postagem->execute();
+$ultimo_id = mysqli_insert_id($connection);
+
+    if ($validacao[1] == "jpeg") {
+        if (isset($_POST["enviar"]) && $_FILES["postagem_imagem"]["error"] == UPLOAD_ERR_OK) {
+            if (move_uploaded_file($_FILES["postagem_imagem"]["tmp_name"], $arquivo_selecionado)) {
+                $update_imagem = $connection->prepare("UPDATE postagem SET postagem_imagem = ? WHERE postagem_id = ?");
+                $update_imagem->bind_param("si", $arquivo_filtrado, $ultimo_id);
+                $update_imagem->execute();
+            }
+            else {
+                echo 'Aceitamos JPEG somente';
+            }
+        }
+    }
+?>
