@@ -72,7 +72,7 @@ $id_usuario = $_SESSION["id"];
 
 <?php 
 
-$pasta_final = "../Alberto_Lucas_Willian/front_end/postagem/assests/postagem_imagem/";
+$pasta_final = "./postagem/assests/postagem_imagem/";
 $arquivo_selecionado = $pasta_final.basename($_FILES["postagem_imagem"]["name"]);
 $arquivo_filtrado = basename($arquivo_selecionado);
 $validacao = explode(".", basename($arquivo_selecionado));

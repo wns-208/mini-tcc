@@ -96,6 +96,7 @@ $ultimo_id = mysqli_insert_id($connection);
                 $update_imagem = $connection->prepare("UPDATE postagem SET postagem_imagem = ? WHERE postagem_id = ?");
                 $update_imagem->bind_param("si", $arquivo_filtrado, $ultimo_id);
                 $update_imagem->execute();
+                header("location: pagina1_principal.html");
             }
             else {
                 echo 'Aceitamos JPEG somente';

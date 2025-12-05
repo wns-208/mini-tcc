@@ -65,7 +65,7 @@ $insert_usuario->bind_param("sss", $usuario_nome, $usuario_email, $usuario_senha
 if ($insert_usuario->execute()) {
     $ultimo_id = mysqli_insert_id($connection);
     $_SESSION["id"] = $ultimo_id;
-    header("location: ./pagina1_principal/index.html");
+    header("location: pagina1_principal.html");
 } else {
     echo "Erro: " . $insert_usuario->error;
 }

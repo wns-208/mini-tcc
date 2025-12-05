@@ -26,6 +26,8 @@ if ($validacao[1] == "jpeg") {
 
             if ($atualizar_foto_perfil->execute()) {
                 echo "Foto de perfil autualizada";
+                sleep(2);
+                header("location: pagina1_principal.html");
 
             } else {
                 echo "Erro em atualizar a foto: " . $atualizar_foto_perfil->error;
