@@ -1,5 +1,5 @@
 body {
-background-image: url('../Pasta_Front_do_FIgma_100%/página de configuração do usuário/blue-ombre-background-1920-x-1080-clk1z7m1ngkj9s7z.jpg');
+background-image: url('Pasta_Front_do_FIgma_100%/página de configuração do usuário/blue-ombre-background-1920-x-1080-clk1z7m1ngkj9s7z.jpg');
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
@@ -8,7 +8,7 @@ font-family: 'Segoe UI', sans-serif;
 
 
 .card-container {
-background-image: url('../Pasta_Front_do_FIgma_100%/página de configuração do usuário/Frame 29.png');
+background-image: url('Pasta_Front_do_FIgma_100%/página de configuração do usuário/Frame 29.png');
 background-position-x: center;
 background-size: cover;
 background-repeat: no-repeat;
