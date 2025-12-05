@@ -1,7 +1,7 @@
 <?php
     // Iniciar a sessão
     session_start();
-    include "../Alberto_Lucas_Willian/back_end/conexao.php";
+    include "../back_end/conexao.php";
     $id_usuario = $_SESSION["id"];
 ?>
 <!doctype html>

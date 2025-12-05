@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include "../back_end/conexao.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

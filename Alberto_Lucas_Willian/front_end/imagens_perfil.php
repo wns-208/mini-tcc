@@ -1,5 +1,5 @@
 <?php
-include "../Alberto_Lucas_Willian/back_end/conexao.php";
+include "../back_end/conexao.php";
 session_start();
 $id_usuario = $_SESSION["id"];
 ?>
