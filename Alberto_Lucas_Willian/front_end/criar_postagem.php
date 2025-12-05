@@ -28,7 +28,7 @@ $id_usuario = $_SESSION["id"];
     <link rel="stylesheet" href="criar_postagem.css" enctype="multipart/form-data">
   </head>
   <body>
-<form action="pagina_edicao_anuncio" method="post"> 
+<form action="criar_postagem.php" method="post"> 
 <div class="container card-container">
 <div class="row imagem_daora justify-content-center">
 <div class="col-7 col-md-8 text-center justify-content-center align-items-center">

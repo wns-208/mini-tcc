@@ -19,13 +19,6 @@
          
         <div class="container">
             <form action="login.php" method="POST">
-                <!-- <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label" for="nome">Nome do Usuario</label>
-                        <input class="form-control" type="text" name="nome" id="nome" autocomplete="on" required>
-                    </div>
-                </div> -->
-
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label class="form-label" for="email">Email</label>
