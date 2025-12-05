@@ -34,7 +34,7 @@
 <div class="container card-container">
 <div class="row imagem_daora justify-content-center">
 <div class="col-7 col-md-8 text-center justify-content-center align-items-center">
-<img src="Pasta_Front_do_FIgma_100%/Página 2/674435.jpg" class="preview-img" alt="Preview">
+<img src="./Pasta_Front_do_FIgma_100%/Página 2/674435.jpg" class="preview-img" alt="Preview">
 </div>
 </div>
 
@@ -75,7 +75,7 @@
 </html>
 
 <?php
-$pasta_final = "../Alberto_Lucas_Willian/front_end/postagem/assests/postagem_imagem/";
+$pasta_final = "./postagem/assests/postagem_imagem/";
 $arquivo_selecionado = $pasta_final.basename($_FILES["postagem_imagem"]["name"]);
 $arquivo_filtrado = basename($arquivo_selecionado);
 $validacao = explode(".", basename($arquivo_selecionado));

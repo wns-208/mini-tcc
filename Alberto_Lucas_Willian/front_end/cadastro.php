@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <img src="../Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" class="rounded float-start" alt="...">
+    <img src="./Pasta_Front_do_Figma_100%/login_cadastro/Pagina_Cadastro.png" class="rounded float-start" alt="...">
 <div class="container mt-4 d-flex justify-content-end align-items-center">
     <div class="formulario">
         <div class="container">
@@ -41,7 +41,10 @@ session_start();
                     
                     <p>Ja tem uma conta? <a href="login.html">Entrar</a></p>
 
-                </div>    
+                </div>
+            <div class="col-12 text-center mt-3">
+                <button class="btn btn-custom">Entrar</button>
+            </div>   
                 </form>
             </div>    
 </div>

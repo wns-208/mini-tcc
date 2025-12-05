@@ -41,6 +41,9 @@ include "../back_end/conexao.php";
                         <a href="pagina1_principal.html" class="btn btn-primary w-100">Entrar</a>
                     </div>
                 </div>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <button class="btn btn-custom">Entrar</button>
             </div>    
             </form>
         </div>    
