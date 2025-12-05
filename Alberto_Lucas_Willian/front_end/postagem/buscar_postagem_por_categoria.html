@@ -16,9 +16,13 @@
             <option value="Misc">Misc</option>
         </select>
     <button type="submit" onclick="getPostagens()">Enviar</button>
-
+    <div class="container" id="lista"></div>
     <script>
+            let lista = document.getElementById('lista');
+            let postagem = { };
+
         let isLoading = false;
+        const local_arquivo = "./assests/postagem_imagem/"
         
         function getPostagens(){
             let categoria_selecionada = document.querySelector("#inputCategoria").value
@@ -36,7 +40,29 @@
                 )
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+
+                response.postagens.forEach(postagem => {
+                    // montando o visual da lista
+                    let row = document.createElement('div');
+                    row.classList.add('row');
+                    row.setAttribute('id', postagem.postagem_id);
+                    row.setAttribute('onclick', 'alert("Por: ' + postagem.postagem_usuario_id + 'ID: ' + postagem.postagem_id);
+
+                    let col = document.createElement('div');
+                    col.classList.add('col-12');
+
+                    let p = document.createElement('p');
+                    p.innerText = 'ID: ' + postagem.postagem_id + ' - Título: ' + postagem.postagem_titulo + ' - Feito por: ' + postagem.postagem_id_usuario + ' - Criado em: ' + postagem.postagem_data_criacao + ' - Conteudo: ' + postagem.postagem_conteudo + ' - Categoria: ' + postagem.postagem_categoria
+                    if (postagem.postagem_imagem != 'SEM_IMAGEM.jpeg') {
+                        let img = document.createElement('img');
+                        img.src = local_arquivo + postagem.postagem_imagem;
+                        col.appendChild(img);
+                    }
+                    col.appendChild(p);
+                    row.appendChild(col);
+                    lista.appendChild(row);
+                });
+
             })
             .catch(erro => {
                 console.log(erro);
@@ -53,3 +79,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    
 </body>
 </html>
+

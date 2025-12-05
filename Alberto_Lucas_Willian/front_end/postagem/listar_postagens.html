@@ -3,24 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exibindo todas as postagens</title>
+    <title>Exibindo todos as postagens</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-
     <div class="container" id="lista"></div>
-
     <script>
         //selecionando a div onde a lista sera exibida
         let lista = document.getElementById('lista');
-        
+    
         let postagem = { };
 
+        const local_arquivo = "./assests/postagem_imagem/"
 
         function getPostagens(){
                 isLoading = true;
 
-            fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_postagem/listar_postagems.php',
+            fetch('http://localhost/mini-tcc/alberto_lucas_willian/back_end/gerenciamento_postagem/listar_postagens.php',
                 {
                     method: 'GET',
                     headers: {
@@ -31,19 +30,23 @@
             .then(response => response.json())
             .then(response => {
 
-                response.postagems.forEach(postagem => {
+                response.postagens.forEach(postagem => {
                     // montando o visual da lista
                     let row = document.createElement('div');
                     row.classList.add('row');
                     row.setAttribute('id', postagem.postagem_id);
-                    row.setAttribute('onclick', 'alert("Titulo: ' + postagem.postagem_titulo + 'ID: ' + postagem.postagem_id + 'ID do propetario: ' + postagem.postagem_id_usuario + 'Categoria: ' + postagem_categoria + 'Data de criação: ' + postagem_data_criacao + '")');
+                    row.setAttribute('onclick', 'alert("Por: ' + postagem.postagem_usuario_id + 'ID: ' + postagem.postagem_id);
 
                     let col = document.createElement('div');
                     col.classList.add('col-12');
 
                     let p = document.createElement('p');
-                    p.innerText = postagem.postagem_id + ' - ' + postagem.postagem_nome;
-
+                    p.innerText = 'ID: ' + postagem.postagem_id + ' - Título: ' + postagem.postagem_titulo + ' - Feito por: ' + postagem.postagem_id_usuario + ' - Criado em: ' + postagem.postagem_data_criacao + ' - Conteudo: ' + postagem.postagem_conteudo + ' - Categoria: ' + postagem.postagem_categoria
+                    if (postagem.postagem_imagem != 'SEM_IMAGEM.jpeg') {
+                        let img = document.createElement('img');
+                        img.src = local_arquivo + postagem.postagem_imagem;
+                        col.appendChild(img);
+                    }
                     col.appendChild(p);
                     row.appendChild(col);
                     lista.appendChild(row);

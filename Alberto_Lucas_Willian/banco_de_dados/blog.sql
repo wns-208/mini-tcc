@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2025 at 07:07 PM
+-- Generation Time: Nov 27, 2025 at 07:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,7 +34,7 @@ CREATE TABLE `postagem` (
   `postagem_id_usuario` int(11) NOT NULL,
   `postagem_titulo` varchar(255) NOT NULL,
   `postagem_conteudo` varchar(255) NOT NULL,
-  `postagem_imagem` varchar(255) NOT NULL DEFAULT 'SEM_IMAGEM.jpeg',
+  `postagem_imagem` varchar(255) NOT NULL,
   `postagem_data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
   `postagem_categoria` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
