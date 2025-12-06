@@ -100,7 +100,7 @@ $usuario_senha = isset($_POST['usuario_senha']) ? $_POST['usuario_senha'] : exit
 $update = $connection->prepare("UPDATE usuario SET usuario_nome = ?, usuario_senha = ?, usuario_email = ? WHERE usuario_id = ?");
 $update->bind_param("sssi", $usuario_nome, $usuario_email, $usuario_senha, $id_usuario);
 if ($update->execute()) {
-    header("location: ./imagens_perfil.html");
+    header("location: imagens_perfil.html");
 } else {
     echo "Erro: " . $update->error;
 }
